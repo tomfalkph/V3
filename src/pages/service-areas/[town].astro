@@ -6,6 +6,7 @@ import Reviews from '../../components/Reviews.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import LeadForm from '../../components/LeadForm.astro';
 import { BUSINESS } from '../../consts';
+import { breadcrumbSchema } from '../../data/localBusinessSchema';
 
 // URL structure decision (2026-07-15): towns live at /service-areas/[town].
 export async function getStaticPaths() {
@@ -17,8 +18,13 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const d = entry.data;
 const path = `/service-areas/${entry.id}`;
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: 'Service Areas', path: '/service-areas' },
+  { name: `${d.townName}, PA`, path },
+]);
 ---
-<BaseLayout title={d.title} description={d.description} canonicalPath={path}>
+<BaseLayout title={d.title} description={d.description} canonicalPath={path} schemas={[breadcrumbs]}>
   <section class="hero">
     <div class="container hero__inner">
       <p class="crumbs"><a href="/">Home</a> / <a href="/service-areas">Service Areas</a> / {d.townName}</p>

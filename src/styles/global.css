@@ -136,7 +136,7 @@ a { color: var(--brand-red); text-underline-offset: 2px; }
 
 /* ---- Sticky mobile click-to-call ---- */
 .callbar { position: fixed; left: 0; right: 0; bottom: 0; background: var(--brand-red); z-index: 50; display: flex; box-shadow: 0 -4px 16px rgba(0,0,0,0.15); }
-.callbar a { flex: 1; text-align: center; color: #fff; font-weight: 800; padding: 0.95rem; text-decoration: none; font-size: 1.1rem; }
+.callbar a { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 60px; text-align: center; color: #fff; font-weight: 800; padding: 0.75rem 1rem; text-decoration: none; font-size: 1.12rem; }
 @media (min-width: 860px) { .callbar { display: none; } body { padding-bottom: 0; } }
 
 /* ---- CTA band ---- */
@@ -167,3 +167,30 @@ a { color: var(--brand-red); text-underline-offset: 2px; }
 .internal-links { margin-top: 2rem; font-weight: 600; }
 .badge-row { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; margin-top: 1rem; }
 .pill { display: inline-block; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 0.35rem 0.85rem; font-size: 0.9rem; font-weight: 600; color: var(--ink-soft); }
+
+/* ---- Mid-page CTA (keeps a call/quote nudge above the fold on long pages) ---- */
+.midcta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.25rem;
+  justify-content: space-between; background: var(--bg-soft);
+  border: 1px solid var(--line); border-left: 4px solid var(--brand-red);
+  border-radius: var(--radius); padding: 1.1rem 1.25rem; margin: 2rem 0;
+}
+.midcta p { margin: 0; }
+
+/* ---- Accessibility ---- */
+/* Visible focus for keyboard users (WCAG 2.4.7). */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+  outline: 3px solid var(--brand-red); outline-offset: 2px; border-radius: 3px;
+}
+/* Skip-to-content link (WCAG 2.4.1) — visible on focus. */
+.skip-link {
+  position: absolute; left: 0.5rem; top: -3rem; z-index: 100;
+  background: var(--ink); color: #fff; padding: 0.6rem 1rem; border-radius: 8px;
+  text-decoration: none; font-weight: 700; transition: top 0.15s ease;
+}
+.skip-link:focus { top: 0.5rem; }
+/* Respect reduced-motion (WCAG 2.3.3). */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  .card:hover, .btn:hover { transform: none; }
+}

@@ -30,6 +30,15 @@ const towns = (await getCollection('towns', ({ data }) => !data.draft))
       <p style="margin-top:0.75rem;color:var(--muted)">
         Family-owned in {BUSINESS.addressLocality} since {BUSINESS.foundingYear}.
       </p>
+      {(BUSINESS.licenseHIC || BUSINESS.licenseMasterPlumber) ? (
+        <p style="color:var(--muted)">
+          {BUSINESS.licenseHIC && <span>PA HIC #{BUSINESS.licenseHIC}</span>}
+          {BUSINESS.licenseHIC && BUSINESS.licenseMasterPlumber ? ' · ' : ''}
+          {BUSINESS.licenseMasterPlumber && <span>Master Plumber #{BUSINESS.licenseMasterPlumber}</span>}
+        </p>
+      ) : (
+        <p class="flag">Add PA HIC # + master plumber # in consts.ts (licenseHIC / licenseMasterPlumber) — real trust signal.</p>
+      )}
       <p style="color:var(--muted)">
         <!-- [FLAG: PLACEHOLDER hours — confirm real business hours with Trevor.] -->
         Mon–Fri, business hours. Call for after-hours needs.

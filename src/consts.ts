@@ -53,6 +53,37 @@ export const BUSINESS = {
   reviewCount: 46,
 
   priceRange: '$$',
+  // Payment methods (schema paymentAccepted). [FLAG: confirm before launch.]
+  paymentAccepted: 'Cash, Check, Credit Card, Financing through Synchrony',
+
+  // --- Licenses — DISPLAY these (trust + a wedge vs unlicensed/subcontractor crews).
+  // [FLAG: fill the REAL numbers before launch. Empty = a "needs license #" flag renders,
+  // never a fake number.] ---
+  licenseHIC: '', // PA Home Improvement Contractor # (e.g. PA000000)
+  licenseMasterPlumber: '', // Master plumber license #
+
+  // --- Hours for openingHoursSpecification schema + footer.
+  // [FLAG: PLACEHOLDER hours. hoursConfirmed stays FALSE until Trevor confirms — while
+  // false, NO hours are emitted in schema (never publish unverified hours as a claim).] ---
+  hoursConfirmed: false,
+  businessHours: [
+    { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '17:00' },
+  ],
+
+  // Main service types — feed schema makesOffer and reinforce the entity for local rank.
+  serviceTypes: [
+    'HVAC Installation and Replacement',
+    'Air Conditioning Installation',
+    'Furnace Installation',
+    'Heat Pump Installation',
+    'Boiler Installation',
+    'Ductless Mini-Split Installation',
+    'Water Heater Installation',
+    'Tankless Water Heater Installation',
+    'Well Pump Repair',
+    'Drain Cleaning',
+    'Water Treatment',
+  ],
 
   // --- Service area (Lancaster County + towns we actually serve) ---
   county: 'Lancaster County',

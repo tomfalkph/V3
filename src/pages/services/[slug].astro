@@ -6,6 +6,7 @@ import Reviews from '../../components/Reviews.astro';
 import CTABlock from '../../components/CTABlock.astro';
 import LeadForm from '../../components/LeadForm.astro';
 import { BUSINESS } from '../../consts';
+import { breadcrumbSchema } from '../../data/localBusinessSchema';
 
 export async function getStaticPaths() {
   const services = await getCollection('services', ({ data }) => !data.draft);
@@ -45,7 +46,12 @@ const faqSchema = d.faq && d.faq.length > 0 ? {
     acceptedAnswer: { '@type': 'Answer', text: f.a },
   })),
 } : null;
-const schemas = [serviceSchema, ...(faqSchema ? [faqSchema] : [])];
+const breadcrumbs = breadcrumbSchema([
+  { name: 'Home', path: '/' },
+  { name: pillarLabel, path: pillarPath },
+  { name: d.h1.replace(/ in .*/, ''), path },
+]);
+const schemas = [serviceSchema, breadcrumbs, ...(faqSchema ? [faqSchema] : [])];
 ---
 <BaseLayout title={d.title} description={d.description} canonicalPath={path} schemas={schemas}>
   <section class="hero">
@@ -68,6 +74,14 @@ const schemas = [serviceSchema, ...(faqSchema ? [faqSchema] : [])];
   <article class="section">
     <div class="container prose">
       <Content />
+
+      <aside class="midcta">
+        <p>
+          <strong>Ready for a straight answer?</strong> Call {BUSINESS.phoneDisplay} for a free,
+          no-pressure quote{d.isMoneyPage ? ` — financing available through ${BUSINESS.financingPartner}` : ''}.
+        </p>
+        <a class="btn" href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>
+      </aside>
 
       {d.faq && d.faq.length > 0 && (
         <section class="faq">

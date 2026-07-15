@@ -1,16 +1,17 @@
 /**
  * Site-wide LocalBusiness (HVACBusiness) JSON-LD, built from the single source
- * of truth in consts.ts. Clean JSON-LD, STRUCTURED address (rules §1). This is
- * the head-code schema block from 20-COWORK-START-PROMPT.md, now generated so it
- * can never drift from the NAP the rest of the site uses.
+ * of truth in consts.ts. Clean JSON-LD, STRUCTURED address (rules §1). Generated
+ * so it can never drift from the NAP the rest of the site uses.
  *
  * [FLAG: logo + image point at PLACEHOLDER local paths — Trevor supplies the real
  * logo SVG/PNG and a real job photo; drop them at the paths below.]
+ * [FLAG: sameAs includes the Google profile URL — replace the placeholder Maps-search
+ * URL in consts.googleProfileUrl with the REAL Google Business Profile URL.]
  */
 import { BUSINESS } from '../consts';
 
 export function localBusinessSchema() {
-  return {
+  const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'HVACBusiness',
     '@id': `${BUSINESS.siteUrl}/#localbusiness`,
@@ -22,7 +23,13 @@ export function localBusinessSchema() {
     image: `${BUSINESS.siteUrl}/images/PLACEHOLDER-van.jpg`,
     telephone: BUSINESS.phoneTel,
     priceRange: BUSINESS.priceRange,
+    paymentAccepted: BUSINESS.paymentAccepted,
     foundingDate: String(BUSINESS.foundingYear),
+    // Founders as Person entities (verified: Jim & Edna Falk).
+    founder: [
+      { '@type': 'Person', name: 'Jim Falk' },
+      { '@type': 'Person', name: 'Edna Falk' },
+    ],
     address: {
       '@type': 'PostalAddress',
       streetAddress: BUSINESS.streetAddress,
@@ -40,6 +47,42 @@ export function localBusinessSchema() {
       { '@type': 'AdministrativeArea', name: BUSINESS.county },
       ...BUSINESS.areaServedCities.map((name) => ({ '@type': 'City', name })),
     ],
-    sameAs: [...BUSINESS.sameAs],
+    // Ties the services to the business entity (relevance signal for local rank).
+    makesOffer: BUSINESS.serviceTypes.map((s) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name: s },
+    })),
+    // sameAs: verified profiles + the Google profile (placeholder until real GBP URL).
+    sameAs: [...BUSINESS.sameAs, BUSINESS.googleProfileUrl],
+  };
+
+  // Only emit hours once confirmed — never publish unverified hours as a claim.
+  if (BUSINESS.hoursConfirmed) {
+    schema.openingHoursSpecification = BUSINESS.businessHours.map((h) => ({
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: h.days,
+      opens: h.opens,
+      closes: h.closes,
+    }));
+  }
+
+  return schema;
+}
+
+/**
+ * BreadcrumbList JSON-LD. Pass ordered crumbs (name + absolute or root-relative path);
+ * emits schema Google uses for breadcrumb rich results. Paths are resolved to the
+ * production site URL so they match canonicals.
+ */
+export function breadcrumbSchema(crumbs: { name: string; path: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.name,
+      item: new URL(c.path, BUSINESS.siteUrl).href,
+    })),
   };
 }
