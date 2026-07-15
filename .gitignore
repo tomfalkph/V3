@@ -1,0 +1,19 @@
+# build output
+dist/
+.astro/
+
+# deps
+node_modules/
+
+# env / secrets — NEVER commit real keys
+.env
+.env.*
+!.env.example
+
+# netlify
+.netlify/
+
+# os / editor
+.DS_Store
+Thumbs.db
+*.log

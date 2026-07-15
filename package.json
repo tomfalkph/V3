@@ -1,0 +1,24 @@
+{
+  "name": "tomfalk-site",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tom Falk Plumbing & Heating — owned Astro site (parallel foundation, not yet launched).",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.2.0",
+    "@astrojs/sitemap": "^3.2.0",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.0",
+    "typescript": "^5.6.0"
+  }
+}

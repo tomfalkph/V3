@@ -1,0 +1,3 @@
+# Blog starts fresh (decision 2026-07-15): buyer-intent posts only.
+# Drop a post as one .md file here (see src/content.config.ts `posts` schema
+# for required frontmatter). This file just keeps the empty folder in git.

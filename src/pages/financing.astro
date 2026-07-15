@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABlock from '../components/CTABlock.astro';
+import LeadForm from '../components/LeadForm.astro';
+import { BUSINESS } from '../consts';
+---
+<BaseLayout
+  title="Financing for HVAC and Plumbing in Lancaster - Tom Falk"
+  description="Spread the cost of a new system with financing through Synchrony at Tom Falk Plumbing & Heating. Family-owned in Lancaster County PA since 1961."
+  canonicalPath="/financing"
+>
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="eyebrow">Financing</p>
+      <h1>A new system doesn't have to land all at once</h1>
+      <p class="lead">
+        A furnace, AC, or water heater is a real investment. We offer financing through
+        {BUSINESS.financingPartner} so you can spread the cost out instead of paying for
+        it all in one hit.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn--lg" href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <h2>Financing through {BUSINESS.financingPartner}</h2>
+      <p>
+        When you're planning a new system, ask us about financing. We work with
+        {BUSINESS.financingPartner} to offer options that let you get the system your
+        home needs now and spread the cost over time.
+      </p>
+      <!-- [FLAG: specific plans, terms, APRs, and promotions are set by Synchrony and
+           change — do NOT list specific rates or "as low as" numbers here (verified-only
+           rule). Keep general; the office quotes real current terms by phone.] -->
+      <h2>What to expect</h2>
+      <p>
+        We'll walk you through it when we quote your system — what's available, and what
+        makes sense for your situation. No pressure, and the same straight answers we give
+        on everything else. Call {BUSINESS.phoneDisplay} and ask.
+      </p>
+    </div>
+  </section>
+
+  <LeadForm source="financing" />
+  <CTABlock />
+</BaseLayout>

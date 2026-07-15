@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import { BUSINESS } from '../../consts';
+
+const towns = (await getCollection('towns', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout
+  title="Service Areas Across Lancaster County PA - Tom Falk"
+  description="The Lancaster County PA towns Tom Falk serves for plumbing, heating, and cooling — family-owned in Millersville since 1961. Call for a quote."
+  canonicalPath="/service-areas"
+>
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="eyebrow">Service Areas</p>
+      <h1>Where we work in {BUSINESS.county}</h1>
+      <p class="lead">
+        We're based in {BUSINESS.addressLocality} and serve the towns and rural
+        properties around us — a local family shop, not a call center routing you
+        to whoever's closest. Here's where we regularly work.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3">
+        {towns.map((t) => (
+          <a class="card" href={`/service-areas/${t.id}`}>
+            <h3>{t.data.townName}, PA</h3>
+            <p>Plumbing, heating &amp; cooling in {t.data.townName} and nearby.</p>
+            <span class="card__cta">See {t.data.townName} &rarr;</span>
+          </a>
+        ))}
+      </div>
+      <p class="prose" style="margin-top:1.75rem">
+        Also serving {BUSINESS.areaServedCities.join(', ')}, and the surrounding towns.
+        Don't see yours? <a href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a> — chances are we cover it.
+      </p>
+    </div>
+  </section>
+
+  <LeadForm source="service-areas" />
+  <CTABlock />
+</BaseLayout>

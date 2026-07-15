@@ -1,0 +1,16 @@
+---
+/**
+ * Compact strip of verified trust facts. Every item is a confirmed claim (rules §1).
+ * The Google rating/count are pulled LIVE at build (memoized, so no extra API cost).
+ */
+import { BUSINESS, YEARS_IN_BUSINESS } from '../consts';
+import { getReviews } from '../lib/googleReviews';
+
+const { rating, count } = await getReviews();
+---
+<div class="trustbar">
+  <span><span class="dot">&#9679;</span> Family-owned since {BUSINESS.foundingYear} ({YEARS_IN_BUSINESS} years)</span>
+  <span><span class="dot">&#9679;</span> Amana + Rheem authorized dealer</span>
+  <span><span class="dot">&#9679;</span> {BUSINESS.credentials}</span>
+  <span><span class="dot">&#9679;</span> {rating}&#9733; on Google ({count} reviews)</span>
+</div>

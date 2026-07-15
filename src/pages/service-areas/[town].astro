@@ -1,0 +1,54 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TrustBar from '../../components/TrustBar.astro';
+import Reviews from '../../components/Reviews.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import { BUSINESS } from '../../consts';
+
+// URL structure decision (2026-07-15): towns live at /service-areas/[town].
+export async function getStaticPaths() {
+  const towns = await getCollection('towns', ({ data }) => !data.draft);
+  return towns.map((entry) => ({ params: { town: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+const path = `/service-areas/${entry.id}`;
+---
+<BaseLayout title={d.title} description={d.description} canonicalPath={path}>
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="crumbs"><a href="/">Home</a> / <a href="/service-areas">Service Areas</a> / {d.townName}</p>
+      <h1>{d.h1}</h1>
+      {d.heroImage ? (
+        <img class="hero__ph" src={d.heroImage} alt={d.heroImageAlt ?? ''} loading="eager" />
+      ) : (
+        <p class="flag hero__ph">PLACEHOLDER photo — a real {d.townName} job photo strengthens this page.</p>
+      )}
+      <div style="margin-top:1.25rem"><TrustBar /></div>
+      <div class="btn-row">
+        <a class="btn btn--lg" href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>
+        <a class="btn btn--ghost btn--lg" href="#quote">Request a quote</a>
+      </div>
+    </div>
+  </section>
+
+  <article class="section">
+    <div class="container prose">
+      <Content />
+      <p class="internal-links">
+        Popular in {d.townName}:
+        <a href={`/services/${d.primaryService}`}>HVAC installation &amp; replacement</a>,
+        <a href="/services/heating-cooling">heating &amp; cooling</a>, and
+        <a href="/services/plumbing">plumbing</a>.
+      </p>
+    </div>
+  </article>
+
+  <Reviews limit={3} />
+  <LeadForm source={`town:${entry.id}`} />
+  <CTABlock heading={`Serving ${d.townName} and nearby`} />
+</BaseLayout>

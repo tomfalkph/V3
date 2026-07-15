@@ -1,0 +1,39 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABlock from '../../components/CTABlock.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  return posts.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+const path = `/blog/${entry.id}`;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: d.h1,
+  datePublished: d.pubDate.toISOString(),
+  ...(d.updatedDate ? { dateModified: d.updatedDate.toISOString() } : {}),
+  author: { '@type': 'Organization', name: 'Tom Falk Plumbing & Heating' },
+};
+---
+<BaseLayout title={d.title} description={d.description} canonicalPath={path} schemas={[articleSchema]}>
+  <article class="section">
+    <div class="container prose">
+      <h1>{d.h1}</h1>
+      <p class="muted">{d.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+      {d.heroImage && <img src={d.heroImage} alt={d.heroImageAlt ?? ''} />}
+      <Content />
+    </div>
+  </article>
+  <CTABlock />
+</BaseLayout>
+
+<style>
+  img { max-width: 100%; height: auto; border-radius: var(--radius); }
+</style>

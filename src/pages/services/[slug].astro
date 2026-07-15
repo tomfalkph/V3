@@ -1,0 +1,109 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TrustBar from '../../components/TrustBar.astro';
+import Reviews from '../../components/Reviews.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import { BUSINESS } from '../../consts';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services', ({ data }) => !data.draft);
+  return services.map((entry) => ({ params: { slug: entry.id }, props: { entry, all: services } }));
+}
+
+const { entry, all } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+const path = `/services/${entry.id}`;
+const pillarPath = `/services/${d.pillar}`;
+const pillarLabel = d.pillar === 'heating-cooling' ? 'Heating & Cooling' : 'Plumbing';
+
+// Related: same pillar, different page.
+const related = all
+  .filter((s) => s.data.pillar === d.pillar && s.id !== entry.id && !s.data.draft)
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 4);
+
+// Per-page Service schema (rules §1).
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: d.h1,
+  serviceType: d.h1,
+  provider: { '@id': `${BUSINESS.siteUrl}/#localbusiness` },
+  areaServed: { '@type': 'AdministrativeArea', name: BUSINESS.county },
+  url: new URL(path, BUSINESS.siteUrl).href,
+};
+// FAQPage schema ONLY when a real visible FAQ exists (rules §1).
+const faqSchema = d.faq && d.faq.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: d.faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+} : null;
+const schemas = [serviceSchema, ...(faqSchema ? [faqSchema] : [])];
+---
+<BaseLayout title={d.title} description={d.description} canonicalPath={path} schemas={schemas}>
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="crumbs"><a href="/">Home</a> / <a href={pillarPath}>{pillarLabel}</a> / {d.h1.replace(/ in .*/, '')}</p>
+      <h1>{d.h1}</h1>
+      {d.heroImage ? (
+        <img class="hero__ph" src={d.heroImage} alt={d.heroImageAlt ?? ''} loading="eager" />
+      ) : (
+        <p class="flag hero__ph">PLACEHOLDER hero photo — real job photo from Trevor (location-aware alt text).</p>
+      )}
+      <div style="margin-top:1.25rem"><TrustBar /></div>
+      <div class="btn-row">
+        <a class="btn btn--lg" href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>
+        <a class="btn btn--ghost btn--lg" href="#quote">Request a quote</a>
+      </div>
+    </div>
+  </section>
+
+  <article class="section">
+    <div class="container prose">
+      <Content />
+
+      {d.faq && d.faq.length > 0 && (
+        <section class="faq">
+          <h2>Questions we hear a lot</h2>
+          {d.faq.map((f) => (
+            <div class="faq-item">
+              <h3>{f.q}</h3>
+              <p>{f.a}</p>
+            </div>
+          ))}
+        </section>
+      )}
+
+      <p class="internal-links">
+        Serving <a href="/service-areas/millersville">Millersville</a>, <a href="/service-areas/lancaster">Lancaster</a>, and all of {BUSINESS.county}.
+      </p>
+    </div>
+  </article>
+
+  {related.length > 0 && (
+    <section class="section section--soft">
+      <div class="container">
+        <h2>Related {pillarLabel.toLowerCase()} services</h2>
+        <div class="grid grid--4" style="margin-top:1rem">
+          {related.map((s) => (
+            <a class="card" href={`/services/${s.id}`}>
+              <h3>{s.data.h1.replace(/ in .*/, '')}</h3>
+              <span class="card__cta">See details &rarr;</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <Reviews limit={3} />
+  <LeadForm source={`service:${entry.id}`} />
+  <CTABlock />
+</BaseLayout>

@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABlock from '../components/CTABlock.astro';
+import { getReviews } from '../lib/googleReviews';
+import { BUSINESS } from '../consts';
+
+const { rating, count, reviews, live } = await getReviews();
+---
+<BaseLayout
+  title="Reviews - Tom Falk Plumbing and Heating Lancaster PA"
+  description="Real customer reviews for Tom Falk Plumbing & Heating in Lancaster County PA, pulled live from Google. Rated 4.9 out of 5, trusted since 1961."
+  canonicalPath="/reviews"
+>
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="eyebrow">Reviews from Google</p>
+      <h1>What our neighbors say</h1>
+      <p class="lead">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        {' '}{rating} out of 5 on Google, across {count} reviews — in our customers' own words.
+      </p>
+      <div class="btn-row">
+        <a class="btn" href={BUSINESS.googleProfileUrl} rel="noopener">See all reviews on Google</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3">
+        {reviews.map((r) => (
+          <figure class="review">
+            <blockquote>&ldquo;{r.quote}&rdquo;</blockquote>
+            <figcaption>
+              {r.authorUrl ? <a href={r.authorUrl} rel="noopener nofollow">{r.name}</a> : r.name}
+              {r.source ? `, ${r.source}` : ''}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      {live ? (
+        <p style="margin-top:1.25rem;color:var(--muted)">
+          Reviews pulled live from Google; the full set is on our
+          <a href={BUSINESS.googleProfileUrl} rel="noopener"> Google profile</a>.
+        </p>
+      ) : (
+        <p class="flag">Showing saved reviews — set GOOGLE_PLACES_API_KEY + GOOGLE_PLACE_ID in Netlify to pull live from Google.</p>
+      )}
+    </div>
+  </section>
+
+  <CTABlock heading="Ready to see why?" sub="Call and get the same straight answers our reviewers did." />
+</BaseLayout>

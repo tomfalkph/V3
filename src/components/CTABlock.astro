@@ -1,0 +1,29 @@
+---
+/**
+ * Reusable phone CTA. One clear phone action, tel: link (rules: Definition of
+ * Done — one clear phone CTA per page).
+ */
+import { BUSINESS } from '../consts';
+interface Props {
+  heading?: string;
+  sub?: string;
+}
+const {
+  heading = 'Ready for a straight answer on your system?',
+  sub = "Call and we'll set up a free, no-pressure quote. We size it right and stand behind it.",
+} = Astro.props;
+---
+<section class="cta">
+  <div class="container">
+    <h2>{heading}</h2>
+    <p>{sub}</p>
+    <a class="btn cta-btn" href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>
+  </div>
+</section>
+
+<style>
+  .cta { background: var(--ink); color: #fff; padding-block: clamp(2rem, 5vw, 3rem); margin-top: 2.5rem; }
+  .cta h2 { color: #fff; margin-top: 0; }
+  .cta p { color: #e6e6e6; max-width: 60ch; }
+  .cta-btn { margin-top: 0.75rem; }
+</style>

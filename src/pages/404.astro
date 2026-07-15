@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { BUSINESS } from '../consts';
+---
+<BaseLayout
+  title="Page Not Found - Tom Falk Plumbing and Heating Lancaster"
+  description="That page couldn't be found. Call Tom Falk Plumbing & Heating in Millersville PA, or head back home for plumbing, heating, and cooling help."
+  canonicalPath="/404"
+>
+  <section class="section">
+    <div class="container prose">
+      <h1>We couldn't find that page</h1>
+      <p>Let's get you where you're going. Head back <a href="/">home</a>, or just call us.</p>
+      <a class="btn" href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import TrustBar from '../components/TrustBar.astro';
+import { BUSINESS } from '../consts';
+
+const mapsQuery = encodeURIComponent(
+  `${BUSINESS.name}, ${BUSINESS.streetAddress}, ${BUSINESS.addressLocality}, ${BUSINESS.addressRegion} ${BUSINESS.postalCode}`
+);
+---
+<BaseLayout
+  title="Contact Tom Falk Plumbing and Heating - Millersville PA"
+  description="Call Tom Falk Plumbing & Heating at (717) 872-2850 or request a quote online. Family-owned in Millersville PA, serving Lancaster County since 1961."
+  canonicalPath="/contact"
+>
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="eyebrow">Contact</p>
+      <h1>Get in touch</h1>
+      <p class="lead">The fastest way to a straight answer is a phone call. Prefer to write it down? Use the form and we'll call you back.</p>
+      <div class="btn-row">
+        <a class="btn btn--lg" href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>
+      </div>
+      <div style="margin-top:1.25rem"><TrustBar /></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2">
+        <div class="prose">
+          <h2>Tom Falk Plumbing &amp; Heating</h2>
+          <p>
+            <strong>Phone:</strong> <a href={`tel:${BUSINESS.phoneTel}`}>{BUSINESS.phoneDisplay}</a><br />
+            <strong>Address:</strong> {BUSINESS.streetAddress}, {BUSINESS.addressLocality}, {BUSINESS.addressRegion} {BUSINESS.postalCode}<br />
+            <a href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`} rel="noopener">Get directions</a>
+          </p>
+          <!-- [FLAG: PLACEHOLDER hours — confirm real business hours with Trevor.] -->
+          <p><strong>Hours:</strong> Mon–Fri, business hours. Call for after-hours needs.</p>
+          <p>
+            Serving {BUSINESS.addressLocality}, Lancaster, and all of {BUSINESS.county}.
+            Family-owned since {BUSINESS.foundingYear}.
+          </p>
+          <!-- [FLAG: embed a real Google Map here once launched; kept as a directions link
+               for now to avoid a third-party iframe / layout shift before launch.] -->
+        </div>
+        <div>
+          <LeadForm source="contact" />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

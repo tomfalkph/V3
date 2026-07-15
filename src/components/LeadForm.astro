@@ -1,0 +1,82 @@
+---
+/**
+ * Lead capture form. Posts to the Netlify Function at /api/lead (see
+ * netlify/functions/lead.mjs), which writes to the Supabase `leads` table
+ * Trevor owns. Progressive enhancement: it's a real HTML form that also works
+ * via a tiny inline fetch for a no-reload thank-you. Minimal JS (rules §1).
+ * A hidden honeypot field ("company") catches basic bots — no third-party captcha.
+ */
+interface Props { source?: string }
+const { source = 'site' } = Astro.props;
+---
+<section class="section leadform" id="quote">
+  <div class="container">
+    <h2>Request a free quote</h2>
+    <p class="muted">Tell us what's going on and the best number to reach you. We'll call you back.</p>
+
+    <form id="lead-form" method="POST" action="/api/lead">
+      <input type="hidden" name="source" value={source} />
+      <!-- honeypot: real people leave this empty -->
+      <p class="hp" aria-hidden="true">
+        <label>Company<input type="text" name="company" tabindex="-1" autocomplete="off" /></label>
+      </p>
+
+      <div class="grid grid--2">
+        <label>Name
+          <input type="text" name="name" required autocomplete="name" />
+        </label>
+        <label>Phone
+          <input type="tel" name="phone" required autocomplete="tel" />
+        </label>
+      </div>
+      <label>Email (optional)
+        <input type="email" name="email" autocomplete="email" />
+      </label>
+      <label>Town
+        <input type="text" name="town" autocomplete="address-level2" placeholder="Millersville" />
+      </label>
+      <label>What do you need?
+        <textarea name="message" rows="4" placeholder="e.g. AC is 18 years old and struggling — want a replacement quote."></textarea>
+      </label>
+
+      <button class="btn" type="submit">Send request</button>
+      <p id="lead-status" role="status" class="muted"></p>
+    </form>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('lead-form') as HTMLFormElement | null;
+  const status = document.getElementById('lead-status');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!status) return;
+    status.textContent = 'Sending…';
+    try {
+      // Submit as application/x-www-form-urlencoded (robustly parsed server-side)
+      // instead of multipart/form-data — avoids fragile boundary parsing in the
+      // Netlify function. All fields are text, so URLSearchParams handles them.
+      const body = new URLSearchParams(new FormData(form) as any).toString();
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      form.reset();
+      status.textContent = "Thanks — we got it and we'll call you back.";
+    } catch {
+      status.textContent = 'Something went wrong. Please call us at (717) 872-2850.';
+    }
+  });
+</script>
+
+<style>
+  .leadform label { display: block; font-weight: 600; margin-top: 0.9rem; }
+  .leadform input, .leadform textarea {
+    display: block; width: 100%; margin-top: 0.3rem; padding: 0.7rem;
+    border: 1px solid var(--line); border-radius: 8px; font: inherit;
+  }
+  .leadform button { margin-top: 1.1rem; }
+  .hp { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+</style>

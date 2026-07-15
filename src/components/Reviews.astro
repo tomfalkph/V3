@@ -1,0 +1,45 @@
+---
+/**
+ * Reviews strip — LIVE from Google at build time (src/lib/googleReviews.ts), with a
+ * last-known-good fallback so it never goes stale AND never breaks the build. No
+ * invented testimonials (rules §1). AggregateRating JSON-LD is deliberately NOT
+ * emitted (self-serving-markup risk); the real rating lives on Google.
+ */
+import { getReviews } from '../lib/googleReviews';
+import { BUSINESS } from '../consts';
+
+interface Props { limit?: number; heading?: string }
+const { limit = 6, heading = 'What your neighbors say' } = Astro.props;
+
+const { rating, count, reviews, live } = await getReviews();
+const shown = reviews.slice(0, limit);
+---
+{shown.length > 0 && (
+  <section class="section section--soft reviews">
+    <div class="container">
+      <p class="eyebrow">Reviews from Google</p>
+      <h2>{heading}</h2>
+      <p class="lead">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        {' '}{rating} out of 5 on Google, across {count} reviews.
+      </p>
+      <div class="grid grid--3" style="margin-top:1.5rem">
+        {shown.map((r) => (
+          <figure class="review">
+            <blockquote>&ldquo;{r.quote}&rdquo;</blockquote>
+            <figcaption>
+              {r.authorUrl ? <a href={r.authorUrl} rel="noopener nofollow">{r.name}</a> : r.name}
+              {r.source ? `, ${r.source}` : ''}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      <p style="margin-top:1.25rem">
+        <a class="btn btn--ghost" href={BUSINESS.googleProfileUrl} rel="noopener">See all reviews on Google</a>
+      </p>
+      {!live && (
+        <p class="flag">Showing saved reviews — set GOOGLE_PLACES_API_KEY + GOOGLE_PLACE_ID to pull live.</p>
+      )}
+    </div>
+  </section>
+)}

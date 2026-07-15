@@ -1,0 +1,14 @@
+---
+/**
+ * Service card for hub / homepage grids. Descriptive anchor, internal link to a
+ * real service page (rules Definition of Done).
+ */
+interface Props { href: string; title: string; summary: string; badge?: string }
+const { href, title, summary, badge } = Astro.props;
+---
+<a class="card" href={href}>
+  {badge && <span class="pill" style="margin-bottom:0.5rem">{badge}</span>}
+  <h3>{title}</h3>
+  <p>{summary}</p>
+  <span class="card__cta">See details &rarr;</span>
+</a>

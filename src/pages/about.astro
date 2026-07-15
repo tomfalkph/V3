@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TrustBar from '../components/TrustBar.astro';
+import Reviews from '../components/Reviews.astro';
+import CTABlock from '../components/CTABlock.astro';
+import { BUSINESS, YEARS_IN_BUSINESS } from '../consts';
+---
+<BaseLayout
+  title="About Tom Falk Plumbing and Heating in Millersville PA"
+  description="A family-owned plumbing and HVAC shop in Millersville PA, serving Lancaster County since 1961, founded by Jim and Edna Falk. Meet the family shop."
+  canonicalPath="/about"
+>
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="eyebrow">Our Story</p>
+      <h1>A family shop in Millersville since {BUSINESS.foundingYear}</h1>
+      <p class="lead">
+        {BUSINESS.founders} started Tom Falk Plumbing &amp; Heating in {BUSINESS.foundingYear}.
+        {YEARS_IN_BUSINESS} years later it's still a family business, still in
+        {BUSINESS.addressLocality}, still answering to its own name in this community.
+      </p>
+      <p class="flag hero__ph">PLACEHOLDER — a real team or shop photo belongs here.</p>
+      <div style="margin-top:1.25rem"><TrustBar /></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      <h2>Same family, same standards</h2>
+      <p>
+        A lot of our customers have known us as their plumber for decades. Now we bring
+        that same approach to full heating and cooling. When you call, you get a local
+        team — {BUSINESS.credentials.toLowerCase()} — not a call center and not a
+        rotating crew of subcontractors. The people who show up are the people who answer
+        to the name on the van.
+      </p>
+
+      <h2>Not a private-equity rollup</h2>
+      <p>
+        A lot of the names advertising around Lancaster County are backed by out-of-town
+        investors now. We're not one of them. We're the shop that's been down the street
+        since {BUSINESS.foundingYear}, and that's the whole difference: we live here, we
+        answer for our own work, and we'll be here if you ever need us again.
+      </p>
+
+      <h2>How we do the work</h2>
+      <p>
+        We size systems with a real load calculation instead of guessing. We're an
+        authorized dealer for Amana and Rheem. We back our installs with a 1-year labor
+        guarantee, extendable up to 10 years, plus manufacturer warranties, and we offer
+        financing through Synchrony. And we'll always tell you straight whether it's time
+        to replace something or whether it has life left — because that's how you keep a
+        customer for 65 years.
+      </p>
+    </div>
+  </section>
+
+  <Reviews limit={6} />
+  <CTABlock heading="Want that kind of shop on your side?" />
+</BaseLayout>

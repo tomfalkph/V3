@@ -1,0 +1,79 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import TrustBar from '../../components/TrustBar.astro';
+import Reviews from '../../components/Reviews.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import { BUSINESS } from '../../consts';
+
+const all = (await getCollection('services', ({ data }) => !data.draft && data.pillar === 'heating-cooling'))
+  .sort((a, b) => a.data.order - b.data.order);
+const installs = all.filter((s) => s.data.intent === 'install');
+const service = all.filter((s) => s.data.intent !== 'install');
+
+const path = '/services/heating-cooling';
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Heating and Cooling',
+  serviceType: 'HVAC installation, replacement, repair, and maintenance',
+  provider: { '@id': `${BUSINESS.siteUrl}/#localbusiness` },
+  areaServed: { '@type': 'AdministrativeArea', name: BUSINESS.county },
+  url: new URL(path, BUSINESS.siteUrl).href,
+};
+---
+<BaseLayout
+  title="Heating and Cooling in Lancaster County PA - Tom Falk"
+  description="Furnace, AC, heat pump, boiler, and ductless install, replacement, repair, and tune-ups across Lancaster County PA. Sized right, since 1961."
+  canonicalPath={path}
+  schemas={[schema]}
+>
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="crumbs"><a href="/">Home</a> / Heating &amp; Cooling</p>
+      <p class="eyebrow">Heating &amp; Cooling</p>
+      <h1>Heating and Cooling in Lancaster County</h1>
+      <p class="lead">
+        Whatever keeps your home comfortable — furnace, AC, heat pump, boiler, or
+        ductless — we install it, replace it, repair it, and tune it up. And we size
+        new systems with a real load calculation instead of guessing.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn--lg" href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>
+        <a class="btn btn--ghost btn--lg" href="#quote">Request a quote</a>
+      </div>
+      <div style="margin-top:1.5rem"><TrustBar /></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>New systems &amp; replacements</h2>
+      <p class="lead">The work we're built for — sized right, installed clean, backed up.</p>
+      <div class="grid grid--3" style="margin-top:1.25rem">
+        {installs.map((s) => (
+          <ServiceCard href={`/services/${s.id}`} title={s.data.h1.replace(/ in .*/, '')} summary={s.data.cardSummary} badge={s.data.isMoneyPage ? 'Install' : undefined} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {service.length > 0 && (
+    <section class="section section--soft">
+      <div class="container">
+        <h2>Repairs &amp; tune-ups</h2>
+        <div class="grid grid--3" style="margin-top:1.25rem">
+          {service.map((s) => (
+            <ServiceCard href={`/services/${s.id}`} title={s.data.h1.replace(/ in .*/, '')} summary={s.data.cardSummary} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <Reviews limit={3} />
+  <LeadForm source="hub:heating-cooling" />
+  <CTABlock />
+</BaseLayout>

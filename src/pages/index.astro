@@ -1,0 +1,92 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import TrustBar from '../components/TrustBar.astro';
+import Reviews from '../components/Reviews.astro';
+import CTABlock from '../components/CTABlock.astro';
+import LeadForm from '../components/LeadForm.astro';
+import { BUSINESS, SEO, YEARS_IN_BUSINESS } from '../consts';
+
+const services = (await getCollection('services', ({ data }) => !data.draft));
+const moneyPages = services
+  .filter((s) => s.data.isMoneyPage)
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 6);
+---
+<BaseLayout title={SEO.defaultTitle} description={SEO.defaultDescription} canonicalPath="/">
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="eyebrow">Plumbing &middot; Heating &middot; Cooling &middot; Since {BUSINESS.foundingYear}</p>
+      <h1>The family shop Lancaster County has called since {BUSINESS.foundingYear}</h1>
+      <p class="lead">
+        {YEARS_IN_BUSINESS} years, same family — first as your plumber, now for full
+        heating and cooling too. We size systems right instead of guessing, and we tell
+        you straight whether it's time to replace or not. No call center. No pressure.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn--lg" href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>
+        <a class="btn btn--ghost btn--lg" href="#quote">Request a free quote</a>
+      </div>
+      <p class="flag hero__ph">PLACEHOLDER hero image — real job photo (wrapped van / install) goes here.</p>
+      <div style="margin-top:1.25rem"><TrustBar /></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">What we're built for</p>
+      <h2>New systems, sized right</h2>
+      <p class="lead">The high-value work we do best — installed clean, sized with a real load calculation, and backed by our labor guarantee.</p>
+      <div class="grid grid--3" style="margin-top:1.5rem">
+        {moneyPages.map((s) => (
+          <ServiceCard href={`/services/${s.id}`} title={s.data.h1.replace(/ in .*/, '')} summary={s.data.cardSummary} />
+        ))}
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--ghost" href="/services/heating-cooling">All heating &amp; cooling &rarr;</a>
+        <a class="btn btn--ghost" href="/services/plumbing">All plumbing &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--ink">
+    <div class="container container--narrow">
+      <p class="eyebrow" style="color:#ff8a8a">The difference</p>
+      <h2>A 65-year family shop, not a private-equity rollup</h2>
+      <p>
+        A lot of the names advertising around here are backed by out-of-town investors
+        now. We're not. Tom Falk has been a family business in {BUSINESS.addressLocality}
+        since {BUSINESS.foundingYear} — founded by {BUSINESS.founders}, still run by the
+        family, still answering to its own name in this community. When you call, you get
+        us. We live here, and we're not going anywhere.
+      </p>
+      <div class="btn-row"><a class="btn btn--ghost" href="/about">Our story &rarr;</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">How we work</p>
+      <h2>Straight answers, sized right, backed up</h2>
+      <div class="grid grid--3" style="margin-top:1.25rem">
+        <div class="card">
+          <h3>We size it right</h3>
+          <p>A real load calculation before we quote — so a new system lasts longer, runs quieter, and costs less to run. No guessing off the old unit.</p>
+        </div>
+        <div class="card">
+          <h3>We tell you straight</h3>
+          <p>If it's time to replace, we'll say so. If your system has life left, we'll say that too. We're not here to sell you something you don't need.</p>
+        </div>
+        <div class="card">
+          <h3>We stand behind it</h3>
+          <p>Amana and Rheem equipment, a 1-year labor guarantee extendable to 10, and financing through Synchrony. Down the street since {BUSINESS.foundingYear}.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Reviews limit={6} />
+  <LeadForm source="homepage" />
+  <CTABlock />
+</BaseLayout>

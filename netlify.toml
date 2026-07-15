@@ -1,0 +1,41 @@
+# Netlify build + hosting config for the Tom Falk site.
+# Static Astro build in /dist, Netlify Functions in netlify/functions.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# ---------------------------------------------------------------------------
+# CANONICAL ENFORCEMENT — one version only (non-www apex).
+# This is the rule the Octane build broke. 301 www -> apex, permanently.
+# NOTE: also set the primary domain to the apex in Netlify's domain settings.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "https://www.tomfalkph.com/*"
+  to = "https://tomfalkph.com/:splat"
+  status = 301
+  force = true
+
+# Friendly alias so the form can POST to /api/lead instead of the raw
+# /.netlify/functions/lead path.
+[[redirects]]
+  from = "/api/lead"
+  to = "/.netlify/functions/lead"
+  status = 200
+
+# Daily rebuild so the live Google reviews stay fresh (see
+# netlify/functions/refresh-reviews.mjs). Requires env var BUILD_HOOK_URL.
+[functions."refresh-reviews"]
+  schedule = "@daily"
+
+# Security + caching headers (lightweight, no third-party bloat).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"

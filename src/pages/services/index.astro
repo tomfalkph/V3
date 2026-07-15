@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import { BUSINESS } from '../../consts';
+
+const services = (await getCollection('services', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.order - b.data.order);
+const heating = services.filter((s) => s.data.pillar === 'heating-cooling');
+const plumbing = services.filter((s) => s.data.pillar === 'plumbing');
+---
+<BaseLayout
+  title="HVAC and Plumbing Services in Lancaster County - Tom Falk"
+  description="Everything Tom Falk handles across Lancaster County PA: HVAC installs and repair, plus full plumbing. Family-owned since 1961. Call for a quote."
+  canonicalPath="/services"
+>
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="eyebrow">Services</p>
+      <h1>What we do</h1>
+      <p class="lead">
+        Two sides of the same 65-year shop: full heating &amp; cooling, and the
+        plumbing we were founded on. Pick a pillar, or call and just tell us what's going on.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2">
+        <a class="card" href="/services/heating-cooling">
+          <h3>Heating &amp; Cooling</h3>
+          <p>Furnace, AC, heat pump, boiler, ductless — install, replace, repair, tune-up.</p>
+          <span class="card__cta">Explore heating &amp; cooling &rarr;</span>
+        </a>
+        <a class="card" href="/services/plumbing">
+          <h3>Plumbing</h3>
+          <p>Water heaters, drains, well pumps, leaks and repiping, gas lines, water treatment.</p>
+          <span class="card__cta">Explore plumbing &rarr;</span>
+        </a>
+      </div>
+
+      <h2>Heating &amp; cooling</h2>
+      <div class="grid grid--3">
+        {heating.map((s) => (
+          <ServiceCard href={`/services/${s.id}`} title={s.data.h1.replace(/ in .*/, '')} summary={s.data.cardSummary} />
+        ))}
+      </div>
+
+      <h2>Plumbing</h2>
+      <div class="grid grid--3">
+        {plumbing.map((s) => (
+          <ServiceCard href={`/services/${s.id}`} title={s.data.h1.replace(/ in .*/, '')} summary={s.data.cardSummary} />
+        ))}
+      </div>
+    </div>
+  </section>
+  <CTABlock />
+</BaseLayout>

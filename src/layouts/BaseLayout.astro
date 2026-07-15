@@ -1,0 +1,78 @@
+---
+/**
+ * BaseLayout — the SEO + schema shell every page uses.
+ * - Unique title/meta per page (passed in).
+ * - Canonical: non-www apex, ONE version (rules §1 — the Octane failure).
+ * - Site-wide LocalBusiness (HVACBusiness) JSON-LD, structured address.
+ * - Optional per-page JSON-LD (Service, FAQPage) via the `schemas` prop.
+ * - Mobile-first, sticky click-to-call.
+ */
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { BUSINESS, SEO } from '../consts';
+import { localBusinessSchema } from '../data/localBusinessSchema';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Path only, e.g. "/services/hvac-installation-replacement". Defaults to current URL. */
+  canonicalPath?: string;
+  /** Extra page-level JSON-LD objects (Service, FAQPage, etc.). */
+  schemas?: Record<string, unknown>[];
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalPath = Astro.url.pathname,
+  schemas = [],
+  ogImage = SEO.ogImage,
+} = Astro.props;
+
+const canonical = new URL(canonicalPath, BUSINESS.siteUrl).href;
+const ogImageAbs = new URL(ogImage, BUSINESS.siteUrl).href;
+const jsonLd = [localBusinessSchema(), ...schemas];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <!-- [FLAG: /favicon.svg is a PLACEHOLDER slot — Trevor exports the F-box mark
+         from the vector logo PDF. Missing file just 404s, no build error.] -->
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={BUSINESS.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageAbs} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Clean JSON-LD (NOT microdata). LocalBusiness site-wide + any page schema. -->
+    {jsonLd.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
+  </head>
+  <body>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+
+    <!-- Sticky mobile click-to-call -->
+    <nav class="callbar" aria-label="Call Tom Falk">
+      <a href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>
+    </nav>
+  </body>
+</html>

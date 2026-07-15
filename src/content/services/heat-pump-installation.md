@@ -1,0 +1,31 @@
+---
+title: "Heat Pump Installation in Lancaster County PA - Tom Falk"
+description: "Heat pump installation across Lancaster County PA — efficient heating and cooling in one system, sized right with a load calculation. Since 1961."
+h1: "Heat Pump Installation in Lancaster County"
+cardSummary: "One system that heats and cools — sized right for your home and installed by people who'll be here to service it."
+pillar: "heating-cooling"
+isMoneyPage: true
+intent: "install"
+order: 4
+heroImage: null
+heroImageAlt: null
+faq:
+  - q: "Does a heat pump work in Lancaster County winters?"
+    a: "Modern heat pumps handle our winters well, and many pair with a backup heat source for the coldest stretches. We'll walk you through whether a heat pump, or a heat pump paired with a furnace, fits your home best — no pressure either way."
+  - q: "Is a heat pump cheaper to run?"
+    a: "Because it moves heat instead of burning fuel, a right-sized heat pump can lower what you spend to stay comfortable. The honest answer depends on your home and your current system, and we'll give you that answer straight."
+---
+
+A heat pump does two jobs in one system — it heats your home in winter and cools it in summer — and when it's sized and installed right, it does both efficiently. We install heat pumps across Lancaster County, and because we're a family shop that's been here since 1961, we'll be here to service what we put in.
+
+## Right for your home, or not — we'll tell you
+
+A heat pump is a great fit for a lot of homes and not the perfect answer for every one. We won't push you into one to move a unit. We'll look at your home, how it's built, and how you heat now, and give you a straight recommendation — heat pump, or a heat pump paired with a furnace for the coldest days.
+
+## Sized with a real load calculation
+
+Like every system we install, a heat pump gets sized to your home's actual needs — square footage, layout, insulation, windows — not guessed off the old equipment. Right-sizing is what makes the difference between a system that quietly does its job and one that struggles.
+
+## Backed up and financed
+
+Our installs carry a 1-year labor guarantee, extendable up to 10 years, plus the manufacturer's warranty. Financing is available through Synchrony. Call and we'll set up a free, no-pressure quote.

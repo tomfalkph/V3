@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
+import TrustBar from '../../components/TrustBar.astro';
+import Reviews from '../../components/Reviews.astro';
+import CTABlock from '../../components/CTABlock.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import { BUSINESS } from '../../consts';
+
+const all = (await getCollection('services', ({ data }) => !data.draft && data.pillar === 'plumbing'))
+  .sort((a, b) => a.data.order - b.data.order);
+
+const path = '/services/plumbing';
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Plumbing',
+  serviceType: 'Residential plumbing: water heaters, drains, pipes, wells, gas lines',
+  provider: { '@id': `${BUSINESS.siteUrl}/#localbusiness` },
+  areaServed: { '@type': 'AdministrativeArea', name: BUSINESS.county },
+  url: new URL(path, BUSINESS.siteUrl).href,
+};
+---
+<BaseLayout
+  title="Plumbing in Lancaster County PA - Tom Falk Plumbing"
+  description="Water heaters, drains, well pumps, leak and pipe repair, and gas lines across Lancaster County PA. Licensed plumbers, family-owned since 1961."
+  canonicalPath={path}
+  schemas={[schema]}
+>
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="crumbs"><a href="/">Home</a> / Plumbing</p>
+      <p class="eyebrow">Plumbing</p>
+      <h1>Plumbing in Lancaster County</h1>
+      <p class="lead">
+        We started as your plumber in 1961, and we still are. Water heaters, drains,
+        leaks, repiping, well pumps, water treatment, gas lines — licensed master and
+        journeymen plumbers who do it right and clean up after.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn--lg" href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>
+        <a class="btn btn--ghost btn--lg" href="#quote">Request a quote</a>
+      </div>
+      <div style="margin-top:1.5rem"><TrustBar /></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>What we handle</h2>
+      <div class="grid grid--3" style="margin-top:1.25rem">
+        {all.map((s) => (
+          <ServiceCard href={`/services/${s.id}`} title={s.data.h1.replace(/ in .*/, '')} summary={s.data.cardSummary} />
+        ))}
+        {all.length === 0 && (
+          <p class="flag">No plumbing pages yet — add markdown to src/content/services with pillar: plumbing.</p>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <Reviews limit={3} />
+  <LeadForm source="hub:plumbing" />
+  <CTABlock />
+</BaseLayout>
