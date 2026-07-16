@@ -7,6 +7,7 @@ import Reviews from '../components/Reviews.astro';
 import CTABlock from '../components/CTABlock.astro';
 import LeadForm from '../components/LeadForm.astro';
 import { BUSINESS, SEO, YEARS_IN_BUSINESS } from '../consts';
+import logo from '../assets/logo-tomfalk.svg?url';
 
 const services = (await getCollection('services', ({ data }) => !data.draft));
 const moneyPages = services
@@ -17,6 +18,8 @@ const moneyPages = services
 <BaseLayout title={SEO.defaultTitle} description={SEO.defaultDescription} canonicalPath="/">
   <section class="hero">
     <div class="container hero__inner">
+      <img class="hero-logo" src={logo} alt={`${BUSINESS.name} — Plumbing, Heating & Cooling`}
+           width="340" height="236" loading="eager" decoding="async" />
       <p class="eyebrow">Plumbing &middot; Heating &middot; Cooling &middot; Since {BUSINESS.foundingYear}</p>
       <h1>The family shop Lancaster County has called since {BUSINESS.foundingYear}</h1>
       <p class="lead">
@@ -90,3 +93,8 @@ const moneyPages = services
   <LeadForm source="homepage" />
   <CTABlock />
 </BaseLayout>
+
+<style>
+  /* Logo lockup anchoring the hero (the handwritten script is the warmth anchor). */
+  .hero-logo { width: min(340px, 78%); height: auto; margin: 0 0 1.25rem; }
+</style>

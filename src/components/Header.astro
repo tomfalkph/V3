@@ -1,18 +1,17 @@
 ---
 /**
- * Site header: placeholder wordmark (TEXT — no generated logo image, per the
- * photo/logo rule), primary nav to the pillar hubs + key pages, and a desktop
- * click-to-call button. No JS mega-menu (that's bloat); hubs list their services.
- * [FLAG: logo is a TEXT placeholder. Trevor supplies the real logo SVG; the
- * logo-sizing session swaps the wordmark for an <img>/inline SVG.]
+ * Site header: the real Tom Falk logo (vector SVG from the brand PDF — handwritten
+ * script + red F-mark, the warmth anchor), primary nav to the pillar hubs + key
+ * pages, and a desktop click-to-call button. No JS mega-menu (that's bloat).
  */
 import { BUSINESS } from '../consts';
+import logo from '../assets/logo-tomfalk.svg?url';
 ---
 <header class="site-header">
   <div class="container header-inner">
     <a href="/" class="brand" aria-label={`${BUSINESS.name} — home`}>
-      <span class="wordmark">Tom Falk</span>
-      <span class="brand-sub">Plumbing &middot; Heating &middot; Cooling</span>
+      <img class="brand-logo" src={logo} alt={`${BUSINESS.name} — Plumbing, Heating & Cooling`}
+           width="208" height="145" loading="eager" decoding="async" />
     </a>
 
     <nav class="mainnav" aria-label="Primary">

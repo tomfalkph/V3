@@ -5,22 +5,35 @@
    ========================================================================= */
 
 :root {
-  --brand-red: #b3121a;      /* [FLAG: approx brand red — confirm exact hex from logo] */
-  --brand-red-dk: #8f0e15;
-  --ink: #17181a;
-  --ink-soft: #3a3d42;
-  --muted: #5c6067;
-  --line: #e5e3de;
-  --bg: #ffffff;
-  --bg-soft: #f7f5f1;        /* warm paper, not clinical gray */
-  --bg-ink: #17181a;
+  /* Type — Barlow (headings, non-condensed) + Public Sans (body). Warm & readable;
+     the real logo carries the industrial/gothic note, so headings stay calm. */
+  --font-head: "Barlow", system-ui, sans-serif;
+  --font-body: "Public Sans", system-ui, sans-serif;
+  --font: var(--font-body);          /* body already uses var(--font) */
+  --serif: ui-serif, Georgia, "Times New Roman", serif;
+
+  /* Color — v2: red demoted to CTA/logo/link/eyebrow ONLY (max ~2–3 red/viewport);
+     ink + canvas softened to warm-neutral. Existing names kept; values swapped. */
+  --brand-red: #CE1126;      /* logo red */
+  --brand-red-dk: #A80E1F;   /* darker red for hover */
+  --red-hover: #A80E1F;      /* v2 alias */
+  --ink: #1F2328;            /* softened near-black, NOT #000 */
+  --ink-soft: #374151;
+  --ink-2: #374151;          /* v2 alias */
+  --muted: #6B7280;
+  --line: #E5E7EB;
+  --bg: #FCFCFB;             /* warm paper, kills glare */
+  --bg-soft: #F1F3F5;        /* section/card separation tone */
+  --bg-ink: #121416;         /* grounding dark band */
+  --dark: #121416;           /* v2 alias */
+  --input-line: #ADB5BD;
   --accent: #12634b;         /* deep green for plumbing/water accents */
+
   --max: 1120px;
   --pad: 1.25rem;
-  --radius: 12px;
-  --shadow: 0 10px 30px rgba(20,20,20,0.08);
-  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --serif: ui-serif, Georgia, "Times New Roman", serif;
+  --radius: 8px;
+  --shadow: 0 10px 30px rgba(28,31,34,0.08);
+  --shadow-card: 0 4px 12px rgba(28,31,34,.05);
 }
 
 * { box-sizing: border-box; }
@@ -30,16 +43,18 @@ body {
   font-family: var(--font);
   color: var(--ink);
   background: var(--bg);
-  line-height: 1.62;
-  font-size: 1.06rem;
+  line-height: 1.6;
+  font-size: 1.125rem;
   padding-bottom: env(safe-area-inset-bottom);
 }
 img { max-width: 100%; height: auto; display: block; }
 
-h1, h2, h3, h4 { line-height: 1.15; color: var(--ink); font-weight: 800; letter-spacing: -0.01em; }
-h1 { font-size: clamp(1.9rem, 5.2vw, 3rem); margin: 0 0 0.6rem; }
-h2 { font-size: clamp(1.4rem, 3.6vw, 2.05rem); margin: 2.4rem 0 0.6rem; }
-h3 { font-size: clamp(1.15rem, 2.4vw, 1.35rem); margin: 1.6rem 0 0.4rem; }
+/* Headings — Barlow, sentence case, normal tracking (no forced uppercase / condensed). */
+h1, h2, h3, h4 { font-family: var(--font-head); color: var(--ink); }
+h1 { font-weight: 700; font-size: clamp(2.25rem, 5vw, 3.25rem); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 0.6rem; }
+h2 { font-weight: 700; font-size: clamp(1.75rem, 4vw, 2.25rem); line-height: 1.15; letter-spacing: normal; margin: 2.4rem 0 0.6rem; }
+h3 { font-weight: 600; font-size: 1.375rem; line-height: 1.25; letter-spacing: normal; margin: 1.6rem 0 0.4rem; }
+h4 { font-weight: 700; line-height: 1.2; letter-spacing: normal; }
 p { margin: 0 0 1rem; }
 a { color: var(--brand-red); text-underline-offset: 2px; }
 
@@ -53,7 +68,7 @@ a { color: var(--brand-red); text-underline-offset: 2px; }
 .prose ul { padding-left: 1.15rem; }
 .prose li { margin-bottom: 0.35rem; }
 .prose h2 + p, .prose h3 + p { margin-top: 0.2rem; }
-.eyebrow { text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.78rem; font-weight: 700; color: var(--brand-red); margin: 0 0 0.5rem; }
+.eyebrow { font-family: var(--font-body); text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.875rem; font-weight: 600; line-height: 1.4; color: var(--brand-red); margin: 0 0 0.5rem; }
 .lead { font-size: clamp(1.1rem, 2.2vw, 1.28rem); color: var(--ink-soft); max-width: 60ch; }
 
 /* ---- Buttons ---- */
@@ -64,9 +79,12 @@ a { color: var(--brand-red); text-underline-offset: 2px; }
   font-size: 1.08rem; border: 2px solid var(--brand-red); cursor: pointer;
   transition: transform 0.12s ease, filter 0.12s ease;
 }
-.btn:hover { filter: brightness(0.93); transform: translateY(-1px); }
-.btn--ghost { background: transparent; color: var(--brand-red); }
+.btn:hover { background: var(--red-hover); border-color: var(--red-hover); transform: translateY(-1px); }
+/* Secondary: ink outline, not red — reduces red-fatigue. */
+.btn--ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn--ghost:hover { background: var(--bg-soft); color: var(--ink); border-color: var(--ink); }
 .section--ink .btn--ghost { color: #fff; border-color: #fff; }
+.section--ink .btn--ghost:hover { background: rgba(255,255,255,0.12); color: #fff; border-color: #fff; }
 .btn--lg { padding: 1.05rem 1.8rem; font-size: 1.15rem; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.1rem; }
 
@@ -85,14 +103,17 @@ a { color: var(--brand-red); text-underline-offset: 2px; }
 @media (min-width: 900px) { .grid--4 { grid-template-columns: repeat(4, 1fr); } }
 
 /* ---- Cards ---- */
+/* Separation by tone + soft shadow, not a hard border; no red top-border.
+   Headings stay ink (warm/readable); only the CTA affordance carries red. */
 .card {
   display: block; text-decoration: none; color: var(--ink);
-  border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 1.25rem 1.35rem; background: #fff;
-  transition: box-shadow 0.15s, transform 0.15s, border-color 0.15s;
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem; background: var(--bg);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.15s, transform 0.15s;
 }
-.card:hover { box-shadow: var(--shadow); transform: translateY(-2px); border-color: #dcd8d0; }
-.card h3 { margin: 0 0 0.35rem; color: var(--brand-red); }
+.card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.card h3 { margin: 0 0 0.35rem; color: var(--ink); }
 .card p { margin: 0 0 0.5rem; color: var(--muted); }
 .card__cta { font-weight: 700; color: var(--brand-red); font-size: 0.95rem; }
 
@@ -107,11 +128,11 @@ a { color: var(--brand-red); text-underline-offset: 2px; }
 .trustbar .dot { color: var(--brand-red); }
 
 /* ---- Header ---- */
-.site-header { border-bottom: 1px solid var(--line); background: #fff; position: sticky; top: 0; z-index: 40; }
+/* Separation by soft shadow + tone, not a hard dark line. */
+.site-header { background: var(--bg); box-shadow: var(--shadow-card); position: sticky; top: 0; z-index: 40; }
 .header-inner { display: flex; align-items: center; gap: 1rem; padding-block: 0.7rem; }
-.brand { text-decoration: none; color: var(--ink); display: flex; flex-direction: column; line-height: 1.05; }
-.brand .wordmark { font-weight: 900; font-size: 1.4rem; color: var(--brand-red); letter-spacing: -0.02em; }
-.brand .brand-sub { font-size: 0.66rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.brand { text-decoration: none; color: var(--ink); display: inline-flex; align-items: center; }
+.brand-logo { display: block; height: auto; width: clamp(148px, 19vw, 208px); }
 .mainnav { display: none; gap: 1.15rem; margin-left: auto; align-items: center; }
 .mainnav a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: 0.98rem; }
 .mainnav a:hover { color: var(--brand-red); }
@@ -145,7 +166,7 @@ a { color: var(--brand-red); text-underline-offset: 2px; }
 .cta p { color: #d9d8d4; max-width: 60ch; }
 
 /* ---- Reviews ---- */
-.review { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 1.2rem 1.3rem; }
+.review { margin: 0; background: var(--bg); box-shadow: var(--shadow-card); border-radius: var(--radius); padding: 1.2rem 1.3rem; }
 .review blockquote { margin: 0 0 0.7rem; font-size: 1.02rem; color: var(--ink-soft); }
 .review figcaption { color: var(--ink); font-weight: 700; font-size: 0.95rem; }
 .stars { color: #e0a400; letter-spacing: 2px; }
@@ -156,8 +177,8 @@ a { color: var(--brand-red); text-underline-offset: 2px; }
 
 /* ---- Forms ---- */
 .leadform label { display: block; font-weight: 600; margin-top: 0.9rem; }
-.leadform input, .leadform textarea { display: block; width: 100%; margin-top: 0.3rem; padding: 0.75rem; border: 1px solid var(--line); border-radius: 9px; font: inherit; background: #fff; }
-.leadform input:focus, .leadform textarea:focus { outline: 2px solid var(--brand-red); border-color: var(--brand-red); }
+.leadform input, .leadform textarea { display: block; width: 100%; margin-top: 0.3rem; padding: 0.75rem; border: 1px solid var(--input-line); border-radius: var(--radius); font: inherit; color: var(--ink); background: var(--bg); }
+.leadform input:focus, .leadform textarea:focus { outline: 2px solid var(--brand-red); outline-offset: 0; border-color: var(--brand-red); }
 .leadform button { margin-top: 1.15rem; }
 .hp { position: absolute; left: -9999px; height: 0; overflow: hidden; }
 

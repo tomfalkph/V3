@@ -42,8 +42,15 @@ const jsonLd = [localBusinessSchema(), ...schemas];
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <!-- [FLAG: /favicon.svg is a PLACEHOLDER slot — Trevor exports the F-box mark
-         from the vector logo PDF. Missing file just 404s, no build error.] -->
+
+    <!-- Fonts: Barlow (headings 600/700), Public Sans (body 400/600). Lean,
+         static weights only; display=swap so text paints immediately. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Public+Sans:wght@400;600&display=swap"
+    />
 
     <title>{title}</title>
     <meta name="description" content={description} />
