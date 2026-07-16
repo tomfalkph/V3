@@ -1,8 +1,8 @@
 ---
-title: "Water Treatment Systems in Lancaster County PA - Tom Falk"
-description: "Water treatment installed and serviced across Lancaster County PA, including well-water homes with hard water and quality concerns. Since 1961."
-h1: "Water Treatment in Lancaster County"
-cardSummary: "Water treatment installed and serviced for cleaner, softer water — especially for homes on a well."
+title: "Water Treatment and Softeners in Lancaster PA - Tom Falk"
+description: "Water treatment and water softeners installed and serviced across Lancaster County PA, especially well-water homes with hard water. Since 1961."
+h1: "Water Treatment and Softeners in Lancaster County"
+cardSummary: "Water treatment and softeners installed and serviced for cleaner, softer water — especially on a well."
 pillar: "plumbing"
 isMoneyPage: false
 intent: "install"
@@ -19,6 +19,10 @@ Plenty of Lancaster County homes are on a well, and well water often needs some 
 ## Why it matters
 
 Hard water leaves scale on fixtures, shortens the life of water heaters and appliances, and just doesn't feel as clean. Treating the water protects the plumbing you already paid for and makes the water coming out of the tap better to live with. If you're on a well, treatment is often where the real difference is.
+
+## Water softeners
+
+Hard water is the most common water complaint we hear, especially on a well. A softener takes out the minerals that leave scale on your fixtures and cut the life of your water heater and appliances. Softer water is easier on your plumbing and easier to live with — better lather, cleaner glasses, less spotting. We'll look at what your water actually needs and size a softener to your household, so you're treating the real problem instead of guessing.
 
 ## Installed and serviced by licensed plumbers
 

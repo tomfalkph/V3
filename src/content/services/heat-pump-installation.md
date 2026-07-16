@@ -1,8 +1,8 @@
 ---
-title: "Heat Pump Installation in Lancaster County PA - Tom Falk"
-description: "Heat pump installation across Lancaster County PA — efficient heating and cooling in one system, sized right with a load calculation. Since 1961."
-h1: "Heat Pump Installation in Lancaster County"
-cardSummary: "One system that heats and cools — sized right for your home and installed by people who'll be here to service it."
+title: "Heat Pump Installation and Repair in Lancaster - Tom Falk"
+description: "Heat pump installation and repair across Lancaster County PA — heating and cooling in one system, sized right with a load calculation. Since 1961."
+h1: "Heat Pump Installation and Repair in Lancaster County"
+cardSummary: "One system that heats and cools — installed, sized right, and repaired by people who'll be here to service it."
 pillar: "heating-cooling"
 isMoneyPage: true
 intent: "install"
@@ -25,6 +25,10 @@ A heat pump is a great fit for a lot of homes and not the perfect answer for eve
 ## Sized with a real load calculation
 
 Like every system we install, a heat pump gets sized to your home's actual needs — square footage, layout, insulation, windows — not guessed off the old equipment. Right-sizing is what makes the difference between a system that quietly does its job and one that struggles.
+
+## Heat pump repair
+
+A heat pump runs year-round, so when it stops heating or cooling the way it should, you want it looked at by someone who knows the system. We repair heat pumps too — we diagnose the real cause instead of throwing parts at it, and if yours is old and failing, we'll give you the honest math on repair versus replacement. We're not here to sell you a new system you don't need.
 
 ## Backed up and financed
 

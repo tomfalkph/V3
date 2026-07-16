@@ -18,7 +18,7 @@ Your water main is the line that carries water from the street into your home. W
 
 ## We find it before we dig
 
-A main line runs underground, so the first job is figuring out where the trouble actually is. We've done this work in Lancaster County since 1961, and we'll locate the problem and tell you honestly whether it needs a repair or a full replacement — not just start tearing up the yard.
+A main line runs underground, so the first job is figuring out where the trouble actually is. We've done this work in Lancaster County since 1961, and we'll locate the problem and tell you honestly whether it needs a repair or a full replacement — not just start tearing up the yard. And because we have our own excavation capability, digging up and replacing a main is handled by our own crew, start to finish.
 
 ## Licensed hands, backed up
 

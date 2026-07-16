@@ -18,7 +18,7 @@ A sewer line problem isn't something to sit on — it affects every drain in the
 
 ## We diagnose before we dig in
 
-Backups can come from a blockage, a damaged line, roots, or a problem further down. We find the real cause first instead of guessing, so you're paying to fix the actual problem once — not to chase symptoms.
+Backups can come from a blockage, a damaged line, roots, or a problem further down. We find the real cause first instead of guessing, so you're paying to fix the actual problem once — not to chase symptoms. And if a line has to be dug up and replaced, we have our own excavation capability, so the same crew handles it start to finish — not a subcontractor.
 
 ## We understand septic properties
 
