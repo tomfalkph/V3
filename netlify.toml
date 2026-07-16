@@ -46,3 +46,10 @@
     # "Content-Security-Policy" to enforce. (Static site: reviews are fetched at BUILD
     # time, so no runtime third-party connections are needed.)
     Content-Security-Policy-Report-Only = "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'self'; object-src 'none'"
+
+# Hashed, fingerprinted build assets (JS/CSS/fonts/images) never change content —
+# cache them hard so repeat visits skip the round-trip.
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

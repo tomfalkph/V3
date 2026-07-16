@@ -20,7 +20,7 @@ const towns = (await getCollection('towns', ({ data }) => !data.draft))
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
-      <h4>{BUSINESS.name}</h4>
+      <h2>{BUSINESS.name}</h2>
       <address>
         {BUSINESS.streetAddress}<br />
         {BUSINESS.addressLocality}, {BUSINESS.addressRegion} {BUSINESS.postalCode}<br />
@@ -36,9 +36,9 @@ const towns = (await getCollection('towns', ({ data }) => !data.draft))
           {BUSINESS.licenseHIC && BUSINESS.licenseMasterPlumber ? ' · ' : ''}
           {BUSINESS.licenseMasterPlumber && <span>Master Plumber #{BUSINESS.licenseMasterPlumber}</span>}
         </p>
-      ) : (
+      ) : import.meta.env.DEV ? (
         <p class="flag">Add PA HIC # + master plumber # in consts.ts (licenseHIC / licenseMasterPlumber) — real trust signal.</p>
-      )}
+      ) : null}
       <p style="color:var(--muted)">
         <!-- [FLAG: PLACEHOLDER hours — confirm real business hours with Trevor.] -->
         Mon–Fri, business hours. Call for after-hours needs.
@@ -46,7 +46,7 @@ const towns = (await getCollection('towns', ({ data }) => !data.draft))
     </div>
 
     <div>
-      <h4>Popular services</h4>
+      <h2>Popular services</h2>
       <ul class="footer-links">
         {topServices.map((s) => (
           <li><a href={`/services/${s.id}`}>{s.data.h1.replace(/ in .*/, '')}</a></li>
@@ -57,14 +57,14 @@ const towns = (await getCollection('towns', ({ data }) => !data.draft))
     </div>
 
     <div>
-      <h4>Service areas</h4>
+      <h2>Service areas</h2>
       <ul class="footer-links">
         {towns.map((t) => (
           <li><a href={`/service-areas/${t.id}`}>{t.data.townName}, PA</a></li>
         ))}
         <li><a href="/service-areas">All service areas</a></li>
       </ul>
-      <h4 style="margin-top:1.25rem">Find us</h4>
+      <h2 style="margin-top:1.25rem">Find us</h2>
       <ul class="footer-links">
         {BUSINESS.sameAs.map((href) => (
           <li><a href={href} rel="noopener">{new URL(href).hostname.replace('www.', '')}</a></li>

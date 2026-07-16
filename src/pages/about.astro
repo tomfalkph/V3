@@ -19,7 +19,7 @@ import { BUSINESS, YEARS_IN_BUSINESS } from '../consts';
         {YEARS_IN_BUSINESS} years later it's still a family business, still in
         {BUSINESS.addressLocality}, still answering to its own name in this community.
       </p>
-      <p class="flag hero__ph">PLACEHOLDER — a real team or shop photo belongs here.</p>
+      {import.meta.env.DEV && <p class="flag hero__ph">PLACEHOLDER — a real team or shop photo belongs here.</p>}
       <div style="margin-top:1.25rem"><TrustBar /></div>
     </div>
   </section>

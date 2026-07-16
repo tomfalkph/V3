@@ -60,9 +60,9 @@ const schemas = [serviceSchema, breadcrumbs, ...(faqSchema ? [faqSchema] : [])];
       <h1>{d.h1}</h1>
       {d.heroImage ? (
         <img class="hero__ph" src={d.heroImage} alt={d.heroImageAlt ?? ''} loading="eager" />
-      ) : (
+      ) : import.meta.env.DEV ? (
         <p class="flag hero__ph">PLACEHOLDER hero photo — real job photo from Trevor (location-aware alt text).</p>
-      )}
+      ) : null}
       <div style="margin-top:1.25rem"><TrustBar /></div>
       <div class="btn-row">
         <a class="btn btn--lg" href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>

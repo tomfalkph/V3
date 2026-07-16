@@ -53,7 +53,7 @@ const schema = {
         {all.map((s) => (
           <ServiceCard href={`/services/${s.id}`} title={s.data.h1.replace(/ in .*/, '')} summary={s.data.cardSummary} />
         ))}
-        {all.length === 0 && (
+        {all.length === 0 && import.meta.env.DEV && (
           <p class="flag">No plumbing pages yet — add markdown to src/content/services with pillar: plumbing.</p>
         )}
       </div>

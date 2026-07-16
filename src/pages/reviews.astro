@@ -43,9 +43,9 @@ const { rating, count, reviews, live } = await getReviews();
           Reviews pulled live from Google; the full set is on our
           <a href={BUSINESS.googleProfileUrl} rel="noopener"> Google profile</a>.
         </p>
-      ) : (
+      ) : import.meta.env.DEV ? (
         <p class="flag">Showing saved reviews — set GOOGLE_PLACES_API_KEY + GOOGLE_PLACE_ID in Netlify to pull live from Google.</p>
-      )}
+      ) : null}
     </div>
   </section>
 

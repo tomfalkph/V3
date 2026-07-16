@@ -15,7 +15,7 @@ const moneyPages = services
   .sort((a, b) => a.data.order - b.data.order)
   .slice(0, 6);
 ---
-<BaseLayout title={SEO.defaultTitle} description={SEO.defaultDescription} canonicalPath="/">
+<BaseLayout title={SEO.defaultTitle} description={SEO.defaultDescription} canonicalPath="/" preloadImage={logo}>
   <section class="hero">
     <div class="container hero__inner">
       <img class="hero-logo" src={logo} alt={`${BUSINESS.name} — Plumbing, Heating & Cooling`}
@@ -31,7 +31,7 @@ const moneyPages = services
         <a class="btn btn--lg" href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>
         <a class="btn btn--ghost btn--lg" href="#quote">Request a free quote</a>
       </div>
-      <p class="flag hero__ph">PLACEHOLDER hero image — real job photo (wrapped van / install) goes here.</p>
+      {import.meta.env.DEV && <p class="flag hero__ph">PLACEHOLDER hero image — real job photo (wrapped van / install) goes here.</p>}
       <div style="margin-top:1.25rem"><TrustBar /></div>
     </div>
   </section>

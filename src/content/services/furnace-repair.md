@@ -1,6 +1,6 @@
 ---
 title: "Furnace Repair and Service in Lancaster County PA - Tom Falk"
-description: "Furnace repair in Lancaster County PA. Fast, honest heat when it quits — from a family shop since 1961. We fix it right or tell you when replacing is."
+description: "Furnace repair in Lancaster County PA. Fast, honest heat when it quits — from a family shop since 1961. We fix it right, or tell you when to replace."
 h1: "Furnace Repair in Lancaster County"
 cardSummary: "No heat? We find why your furnace quit and fix it right, then tell you straight if it's worth it."
 pillar: "heating-cooling"

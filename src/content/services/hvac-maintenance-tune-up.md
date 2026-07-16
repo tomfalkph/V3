@@ -1,6 +1,6 @@
 ---
 title: "HVAC Maintenance and Tune-Ups in Lancaster - Tom Falk"
-description: "HVAC maintenance and tune-ups across Lancaster County PA. A yearly check catches problems early and keeps your system running. Ask about our."
+description: "HVAC maintenance and tune-ups across Lancaster County PA. A yearly check catches problems early and keeps your system running longer, since 1961."
 h1: "HVAC Maintenance and Tune-Ups in Lancaster County"
 cardSummary: "A yearly tune-up keeps your heating and cooling running and catches small problems before they cost you."
 pillar: "heating-cooling"

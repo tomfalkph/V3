@@ -1,6 +1,6 @@
 ---
 title: "Plumbing, Heating and Cooling in Lititz PA - Tom Falk"
-description: "Plumbing and HVAC in Lititz PA from Tom Falk. Family-owned since 1961, based nearby in Millersville. Right-sized furnace, boiler, and AC installs for."
+description: "Plumbing and HVAC in Lititz PA from Tom Falk — family-owned since 1961, based nearby in Millersville. Right-sized furnace, boiler, and AC installs."
 h1: "Plumbing, Heating, and Cooling in Lititz, PA"
 townName: "Lititz"
 primaryService: "hvac-installation-replacement"

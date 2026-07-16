@@ -20,7 +20,7 @@ const shown = reviews.slice(0, limit);
       <p class="eyebrow">Reviews from Google</p>
       <h2>{heading}</h2>
       <p class="lead">
-        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         {' '}{rating} out of 5 on Google, across {count} reviews.
       </p>
       <div class="grid grid--3" style="margin-top:1.5rem">
@@ -37,7 +37,7 @@ const shown = reviews.slice(0, limit);
       <p style="margin-top:1.25rem">
         <a class="btn btn--ghost" href={BUSINESS.googleProfileUrl} rel="noopener">See all reviews on Google</a>
       </p>
-      {!live && (
+      {!live && import.meta.env.DEV && (
         <p class="flag">Showing saved reviews — set GOOGLE_PLACES_API_KEY + GOOGLE_PLACE_ID to pull live.</p>
       )}
     </div>

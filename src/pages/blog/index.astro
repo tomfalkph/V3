@@ -22,7 +22,9 @@ const posts = (await getCollection('posts', ({ data }) => !data.draft))
   <section class="section">
     <div class="container">
       {posts.length === 0 ? (
-        <p class="flag">No posts yet. Blog starts fresh with buyer-intent posts only — add markdown to src/content/posts.</p>
+        import.meta.env.DEV ? (
+          <p class="flag">No posts yet. Blog starts fresh with buyer-intent posts only — add markdown to src/content/posts.</p>
+        ) : null
       ) : (
         <div class="grid grid--2">
           {posts.map((p) => (

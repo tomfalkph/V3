@@ -8,6 +8,15 @@
  * - Mobile-first, sticky click-to-call.
  */
 import '../styles/global.css';
+// Self-hosted fonts (Fontsource) — same Barlow + Public Sans, served from our own
+// origin (no render-blocking Google Fonts, and CSP font-src 'self' now holds).
+// Only the weights actually in use; latin subset is the default.
+import '@fontsource/barlow/600.css';
+import '@fontsource/barlow/700.css';
+import '@fontsource/public-sans/400.css';
+import '@fontsource/public-sans/600.css';
+// LCP font weight (H1 = Barlow 700) — hashed woff2 URL for a matching preload.
+import barlow700 from '@fontsource/barlow/files/barlow-latin-700-normal.woff2?url';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { BUSINESS, SEO } from '../consts';
@@ -21,6 +30,8 @@ interface Props {
   /** Extra page-level JSON-LD objects (Service, FAQPage, etc.). */
   schemas?: Record<string, unknown>[];
   ogImage?: string;
+  /** Optional above-the-fold image to preload (e.g. the homepage hero logo). */
+  preloadImage?: string;
 }
 
 const {
@@ -29,6 +40,7 @@ const {
   canonicalPath = Astro.url.pathname,
   schemas = [],
   ogImage = SEO.ogImage,
+  preloadImage,
 } = Astro.props;
 
 const canonical = new URL(canonicalPath, BUSINESS.siteUrl).href;
@@ -43,14 +55,9 @@ const jsonLd = [localBusinessSchema(), ...schemas];
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-    <!-- Fonts: Barlow (headings 600/700), Public Sans (body 400/600). Lean,
-         static weights only; display=swap so text paints immediately. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Public+Sans:wght@400;600&display=swap"
-    />
+    <!-- Preload the LCP font weight (Barlow 700, self-hosted). -->
+    <link rel="preload" href={barlow700} as="font" type="font/woff2" crossorigin />
+    {preloadImage && <link rel="preload" href={preloadImage} as="image" />}
 
     <title>{title}</title>
     <meta name="description" content={description} />

@@ -22,6 +22,14 @@ When a well pump fails, you don't have water — and that's not a wait-till-next
 
 "No water" can come from the pump, the pressure tank, the pressure switch, or the wiring. We find the actual cause instead of throwing parts at it, so you're paying to fix the problem once — not to guess.
 
+## Common well problems we see
+
+No water usually traces to one of a few things, and they don't all mean a new pump. A pump that's lost its prime or burned out, a waterlogged or failed pressure tank, a bad pressure switch, or corroded wiring down the well can each leave you dry. We check the whole system — pump, tank, switch, and wiring — and fix the actual cause instead of selling you a pump you may not need.
+
+## Hard water is common out here
+
+A lot of rural Lancaster County wells run hard or iron-heavy. Along with pumps and pressure tanks, we handle water treatment and softeners, so the water coming into your house is easier on your plumbing and your fixtures.
+
 ## Built for how rural properties actually work
 
 A lot of the county is on well and septic, and those systems have their own quirks. Decades out on these properties means we know them, and we show up ready to get your water back on.
