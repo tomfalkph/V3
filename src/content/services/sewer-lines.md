@@ -7,8 +7,8 @@ pillar: "plumbing"
 isMoneyPage: false
 intent: "repair"
 order: 11
-heroImage: null
-heroImageAlt: null
+heroImage: "excavation-tight-quarters.jpg"
+heroImageAlt: "A compact red Kubota excavator digging a narrow trench in the tight space between a brick house and a wood privacy fence."
 faq:
   - q: "How do I know if it's my sewer line?"
     a: "Multiple drains backing up at once, gurgling toilets, or sewage odors often point to the main line rather than a single fixture. We diagnose the real cause before recommending any work, so you know what you're actually paying to fix."

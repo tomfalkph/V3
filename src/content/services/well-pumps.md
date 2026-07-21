@@ -7,8 +7,8 @@ pillar: "plumbing"
 isMoneyPage: true
 intent: "install"
 order: 3
-heroImage: null
-heroImageAlt: null
+heroImage: "well-pump-puller.jpg"
+heroImageAlt: "Tom Falk's wheeled hydraulic well-pump puller set up on a lawn to pull a submersible pump from a well."
 faq:
   - q: "My well stopped giving water — is that the pump?"
     a: "It can be the pump, the pressure tank, the switch, or wiring — a few different things cause 'no water.' We diagnose the actual cause instead of just swapping parts, so you're not paying for guesses. Call and we'll get out to you."

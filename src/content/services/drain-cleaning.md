@@ -7,8 +7,8 @@ pillar: "plumbing"
 isMoneyPage: false
 intent: "repair"
 order: 10
-heroImage: null
-heroImageAlt: null
+heroImage: "cast-iron-drain.jpg"
+heroImageAlt: "Old cast-iron drain piping running through the stone foundation wall of an older Lancaster County basement."
 faq:
   - q: "My drain keeps clogging — why?"
     a: "A drain that clogs again and again usually means something more than a simple blockage. We look for the real cause instead of clearing it and calling it done, so you're not paying us back every few weeks for the same problem."

@@ -7,8 +7,8 @@ pillar: "plumbing"
 isMoneyPage: false
 intent: "repair"
 order: 14
-heroImage: null
-heroImageAlt: null
+heroImage: "water-service-trench.jpg"
+heroImageAlt: "A new water service line bedded in gravel in an open trench running across a Lancaster County yard."
 faq:
   - q: "How do I know my water main is the problem?"
     a: "A wet or sinking spot in the yard, a sudden jump in your water bill, or pressure dropping across the whole house can all point to a leak in the main. Call us and we'll figure out what's going on before anyone starts digging."

@@ -7,8 +7,8 @@ pillar: "plumbing"
 isMoneyPage: false
 intent: "install"
 order: 15
-heroImage: null
-heroImageAlt: null
+heroImage: "water-softener-install.jpg"
+heroImageAlt: "A newly installed water treatment system with twin fiberglass softener tanks and a brine tank in a Lancaster County basement."
 faq:
   - q: "We're on a well — do we need water treatment?"
     a: "A lot of well-water homes around here deal with hardness or other water quality issues, but the right answer depends on your water. Call us and we'll talk through what you're noticing and what treatment actually fits your home."

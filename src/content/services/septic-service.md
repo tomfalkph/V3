@@ -7,8 +7,8 @@ pillar: "plumbing"
 isMoneyPage: true
 intent: "install"
 order: 4
-heroImage: null
-heroImageAlt: null
+heroImage: "septic-tank-install.jpg"
+heroImageAlt: "A new ribbed black poly septic tank set on a gravel bed in a fresh excavation, inlet and outlet pipes connected, on a Lancaster County property."
 faq:
   - q: "Do you replace a failed septic system?"
     a: "Yes. Whether you're putting in a new system or replacing one that's failed, we handle the installation. Because we have our own excavation capability, the dig and the system are one crew — not a separate subcontractor you have to coordinate."

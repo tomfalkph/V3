@@ -7,8 +7,8 @@ pillar: "plumbing"
 isMoneyPage: true
 intent: "install"
 order: 2
-heroImage: null
-heroImageAlt: null
+heroImage: "tankless-water-heater.jpg"
+heroImageAlt: "A wall-mounted tankless water heater installed by Tom Falk, with new water and gas connections in a basement."
 faq:
   - q: "Is a tankless water heater worth it?"
     a: "For a lot of households, yes — endless hot water, a smaller footprint, and a longer service life than a tank. Whether it's the right call depends on your hot-water demand and your home's setup, and we'll give you the honest math before you decide."
