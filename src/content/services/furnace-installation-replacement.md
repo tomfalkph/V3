@@ -7,8 +7,8 @@ pillar: "heating-cooling"
 isMoneyPage: true
 intent: "install"
 order: 3
-heroImage: null
-heroImageAlt: null
+heroImage: "1000000582.jpg"
+heroImageAlt: "Rheem gas furnace installed by Tom Falk."
 faq:
   - q: "When is it worth replacing a furnace instead of repairing it?"
     a: "If your furnace is over fifteen years old and needing repairs most winters, replacing it usually costs less over time — better efficiency, fewer breakdowns, and steady heat. If it still has good life in it, we'll tell you that instead."

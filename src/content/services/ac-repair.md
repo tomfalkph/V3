@@ -7,8 +7,8 @@ pillar: "heating-cooling"
 isMoneyPage: false
 intent: "repair"
 order: 10
-heroImage: null
-heroImageAlt: null
+heroImage: "1000000555.jpg"
+heroImageAlt: "Burned-out contactor and run capacitor found in an opened AC disconnect during a Tom Falk service call."
 faq:
   - q: "My AC is blowing but not cooling — what's wrong?"
     a: "It could be a lot of things — low refrigerant, a failing capacitor, a dirty coil, or a bad fan motor. That's why we diagnose before we quote. We find the actual cause instead of throwing parts at it."

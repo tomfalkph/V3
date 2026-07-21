@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroImage from '../../components/HeroImage.astro';
 import TrustBar from '../../components/TrustBar.astro';
 import Reviews from '../../components/Reviews.astro';
 import CTABlock from '../../components/CTABlock.astro';
@@ -11,29 +12,63 @@ import { breadcrumbSchema } from '../../data/localBusinessSchema';
 // URL structure decision (2026-07-15): towns live at /service-areas/[town].
 export async function getStaticPaths() {
   const towns = await getCollection('towns', ({ data }) => !data.draft);
-  return towns.map((entry) => ({ params: { town: entry.id }, props: { entry } }));
+  const services = await getCollection('services', ({ data }) => !data.draft);
+  return towns.map((entry) => ({ params: { town: entry.id }, props: { entry, services } }));
 }
 
-const { entry } = Astro.props;
+const { entry, services } = Astro.props;
 const { Content } = await render(entry);
 const d = entry.data;
 const path = `/service-areas/${entry.id}`;
+
+// Resolve each relatedServices slug to its real service page + clean title anchor
+// (strip the " in {County}" tail). Skip any slug that doesn't match a real page.
+const svcById = new Map(services.map((s) => [s.id, s]));
+const featured = (d.relatedServices ?? [])
+  .map((slug) => {
+    const s = svcById.get(slug);
+    return s ? { slug, label: s.data.h1.replace(/ in .*/, '') } : null;
+  })
+  .filter((x): x is { slug: string; label: string } => x !== null);
+
 const breadcrumbs = breadcrumbSchema([
   { name: 'Home', path: '/' },
   { name: 'Service Areas', path: '/service-areas' },
   { name: `${d.townName}, PA`, path },
 ]);
+
+// Per-page Service schema, areaServed = this town (provider = the LocalBusiness).
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: `Plumbing, Heating and Cooling in ${d.townName}, PA`,
+  serviceType: 'Plumbing, Heating and Cooling',
+  provider: { '@id': `${BUSINESS.siteUrl}/#localbusiness` },
+  areaServed: { '@type': 'City', name: `${d.townName}, PA` },
+  url: new URL(path, BUSINESS.siteUrl).href,
+};
+
+// FAQPage schema ONLY when a real visible FAQ exists (rules §1).
+const faqSchema = d.faq && d.faq.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: d.faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+} : null;
+
+const schemas = [serviceSchema, breadcrumbs, ...(faqSchema ? [faqSchema] : [])];
 ---
-<BaseLayout title={d.title} description={d.description} canonicalPath={path} schemas={[breadcrumbs]}>
+<BaseLayout title={d.title} description={d.description} canonicalPath={path} schemas={schemas}>
   <section class="hero">
     <div class="container hero__inner">
       <p class="crumbs"><a href="/">Home</a> / <a href="/service-areas">Service Areas</a> / {d.townName}</p>
       <h1>{d.h1}</h1>
-      {d.heroImage ? (
-        <img class="hero__ph" src={d.heroImage} alt={d.heroImageAlt ?? ''} loading="eager" />
-      ) : import.meta.env.DEV ? (
-        <p class="flag hero__ph">PLACEHOLDER photo — a real {d.townName} job photo strengthens this page.</p>
-      ) : null}
+      {d.heroImage && (
+        <HeroImage name={d.heroImage} alt={d.heroImageAlt ?? ''} eager />
+      )}
       <div style="margin-top:1.25rem"><TrustBar /></div>
       <div class="btn-row">
         <a class="btn btn--lg" href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>
@@ -45,14 +80,33 @@ const breadcrumbs = breadcrumbSchema([
   <article class="section">
     <div class="container prose">
       <Content />
-      <p class="internal-links">
-        Popular in {d.townName}:
-        <a href={`/services/${d.primaryService}`}>HVAC installation &amp; replacement</a>,
-        <a href="/services/heating-cooling">heating &amp; cooling</a>, and
-        <a href="/services/plumbing">plumbing</a>.
-      </p>
+
+      {featured.length > 0 && (
+        <p class="internal-links">
+          Featured services in {d.townName}:{' '}
+          {featured.map((f, i) => (
+            <>
+              <a href={`/services/${f.slug}`}>{f.label}</a>{i < featured.length - 1 ? ', ' : '.'}
+            </>
+          ))}
+        </p>
+      )}
     </div>
   </article>
+
+  {d.faq && d.faq.length > 0 && (
+    <section class="section">
+      <div class="container prose">
+        <h2>Questions we hear from {d.townName} homeowners</h2>
+        {d.faq.map((f) => (
+          <div class="faq-item">
+            <h3>{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )}
 
   <Reviews limit={3} />
   <LeadForm source={`town:${entry.id}`} />

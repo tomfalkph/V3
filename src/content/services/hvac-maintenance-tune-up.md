@@ -7,8 +7,8 @@ pillar: "heating-cooling"
 isMoneyPage: false
 intent: "maintain"
 order: 12
-heroImage: null
-heroImageAlt: null
+heroImage: "1000001290.jpg"
+heroImageAlt: "Air-handler blower cabinet opened up for service by Tom Falk."
 faq:
   - q: "How often should I have my HVAC serviced?"
     a: "Once a year is the general rule — ideally your cooling checked in spring and your heating in fall. Regular service keeps the system running well and gives us a chance to catch small issues before they turn into a no-heat or no-cool call."

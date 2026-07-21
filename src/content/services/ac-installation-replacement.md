@@ -7,8 +7,8 @@ pillar: "heating-cooling"
 isMoneyPage: true
 intent: "install"
 order: 2
-heroImage: null
-heroImageAlt: null
+heroImage: "1000000583.jpg"
+heroImageAlt: "New Rheem air-conditioning condenser on a pad, installed by Tom Falk."
 faq:
   - q: "How do I know what size AC my house needs?"
     a: "We run a real load calculation based on your home's size, layout, insulation, and windows — not a guess off the old unit. A right-sized system cools evenly, runs quieter, pulls humidity better, and costs less to run."

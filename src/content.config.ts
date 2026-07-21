@@ -44,13 +44,24 @@ const towns = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/towns' }),
   schema: z.object({
     ...seoFields,
+    // Town titles use the short HVAC-forward pattern "Plumbing and HVAC in {Town}
+    // PA - Tom Falk" (deliberately under the service pages' 50-char floor), and
+    // descriptions follow the documented 70-160 rule. Override the tighter
+    // shared seoFields bounds for towns only.
+    title: z.string().min(30).max(60).regex(/^[^&|]+$/, 'no ampersands or pipes in titles'),
+    description: z.string().min(70).max(160),
     h1: z.string(),
     townName: z.string(),
     // The primary money page this town links to (slug in services collection).
     primaryService: z.string().default('hvac-installation-replacement'),
+    // Featured services for this town: service slugs rendered as clean topical
+    // anchors (the service's real title). Replaces the old generic "Popular in".
+    relatedServices: z.array(z.string()).default([]),
     order: z.number().default(99),
     heroImage: z.string().nullable().default(null),
     heroImageAlt: z.string().nullable().default(null),
+    // Optional visible FAQ -> FAQPage schema ONLY when present (rules §1).
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
   }),
 });
 

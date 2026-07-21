@@ -7,8 +7,8 @@ pillar: "heating-cooling"
 isMoneyPage: true
 intent: "install"
 order: 5
-heroImage: null
-heroImageAlt: null
+heroImage: "IMG_20260713_132258.jpg"
+heroImageAlt: "US Boiler gas boiler with copper near-boiler piping and an expansion tank, installed by Tom Falk."
 faq:
   - q: "Do you work on both steam and hot-water boilers?"
     a: "Yes. Plenty of older homes around here run boiler heat, and we're licensed plumbers who work on these systems regularly. Call and tell us what you have and we'll take it from there."

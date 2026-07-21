@@ -7,8 +7,8 @@ pillar: "heating-cooling"
 isMoneyPage: false
 intent: "info"
 order: 15
-heroImage: null
-heroImageAlt: null
+heroImage: "1000001292.jpg"
+heroImageAlt: "High-efficiency furnace with a Honeywell whole-house humidifier, installed by Tom Falk."
 faq:
   - q: "Can you install a smart thermostat?"
     a: "Yes. We install and service thermostats, including smart ones. We'll make sure it's compatible with your heating and cooling and set it up so it actually works the way it should, not just gets mounted on the wall."

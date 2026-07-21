@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroImage from '../components/HeroImage.astro';
 import TrustBar from '../components/TrustBar.astro';
 import Reviews from '../components/Reviews.astro';
 import CTABlock from '../components/CTABlock.astro';
@@ -19,7 +20,8 @@ import { BUSINESS, YEARS_IN_BUSINESS } from '../consts';
         {YEARS_IN_BUSINESS} years later it's still a family business, still in
         {BUSINESS.addressLocality}, still answering to its own name in this community.
       </p>
-      {import.meta.env.DEV && <p class="flag hero__ph">PLACEHOLDER — a real team or shop photo belongs here.</p>}
+      <HeroImage name="IMG_20260713_132310.jpg"
+                 alt="Two branded Tom Falk service vans and an American flag beside a newly installed air-conditioning condenser." eager />
       <div style="margin-top:1.25rem"><TrustBar /></div>
     </div>
   </section>

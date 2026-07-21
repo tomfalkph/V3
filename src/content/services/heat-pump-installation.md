@@ -7,8 +7,8 @@ pillar: "heating-cooling"
 isMoneyPage: true
 intent: "install"
 order: 4
-heroImage: null
-heroImageAlt: null
+heroImage: "IMG_20260713_132246.jpg"
+heroImageAlt: "Outdoor condensing unit installed beside a brick home by Tom Falk."
 faq:
   - q: "Does a heat pump work in Lancaster County winters?"
     a: "Modern heat pumps handle our winters well, and many pair with a backup heat source for the coldest stretches. We'll walk you through whether a heat pump, or a heat pump paired with a furnace, fits your home best — no pressure either way."

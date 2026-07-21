@@ -7,8 +7,8 @@ pillar: "heating-cooling"
 isMoneyPage: true
 intent: "install"
 order: 1
-heroImage: null
-heroImageAlt: null
+heroImage: "IMG_20260713_130437.jpg"
+heroImageAlt: "Rheem air handler with an insulated plenum installed by Tom Falk."
 faq:
   - q: "When should I replace my HVAC system instead of repairing it?"
     a: "If your heating or cooling system is over 15 years old and you're calling for a repair every year, replacing it usually costs less over time: lower energy bills, fewer breakdowns, and a system that keeps up. We'll give you a straight answer on whether it's time, and if it still has life in it, we'll tell you that too."

@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroImage from '../../components/HeroImage.astro';
 import TrustBar from '../../components/TrustBar.astro';
 import Reviews from '../../components/Reviews.astro';
 import CTABlock from '../../components/CTABlock.astro';
@@ -59,7 +60,7 @@ const schemas = [serviceSchema, breadcrumbs, ...(faqSchema ? [faqSchema] : [])];
       <p class="crumbs"><a href="/">Home</a> / <a href={pillarPath}>{pillarLabel}</a> / {d.h1.replace(/ in .*/, '')}</p>
       <h1>{d.h1}</h1>
       {d.heroImage ? (
-        <img class="hero__ph" src={d.heroImage} alt={d.heroImageAlt ?? ''} loading="eager" />
+        <HeroImage name={d.heroImage} alt={d.heroImageAlt ?? ''} eager />
       ) : import.meta.env.DEV ? (
         <p class="flag hero__ph">PLACEHOLDER hero photo — real job photo from Trevor (location-aware alt text).</p>
       ) : null}

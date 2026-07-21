@@ -1,24 +1,33 @@
 ---
-title: "Plumbing, Heating and Cooling in Millersville PA - Tom Falk"
-description: "Your local plumber and HVAC installer right here in Millersville PA. Family-owned since 1961, on North George Street. Call for a free quote today."
+title: "Plumbing and HVAC in Millersville PA - Tom Falk"
+description: "Millersville's hometown plumbing and HVAC shop since 1961 — furnace and AC installs, well pumps, water treatment, and everyday repair. On North George St."
 h1: "Plumbing, Heating, and Cooling in Millersville, PA"
 townName: "Millersville"
 primaryService: "hvac-installation-replacement"
+relatedServices:
+  - hvac-installation-replacement
+  - well-pumps
+  - water-treatment
 order: 1
-heroImage: null
-heroImageAlt: null
+heroImage: "IMG_20260713_130417.jpg"
+heroImageAlt: "Rheem air handler fitted into a tight basement closet by Tom Falk."
+faq:
+  - q: "What's the most common well problem you see around Millersville?"
+    a: "More often than not it's the pressure tank or the pressure switch, not the pump itself — that's usually what's behind low water pressure or a pump that keeps cycling. We check the whole system before replacing anything, so you're not paying for a pump you didn't need."
+  - q: "Do you install and replace furnaces and AC in Millersville?"
+    a: "Absolutely. Many of these homes run boilers or older split systems, and we install and replace furnaces, air conditioners, boilers, and heat pumps — each one sized with a real load calculation so it fits the house instead of a guess off the old unit."
 ---
 
-Millersville is home. Our shop is on North George Street, and it has been since 1961 — so when you call Tom Falk, you're calling a plumber and HVAC installer who is actually down the road, not a call center routing you to whoever's closest. We know these streets, these older homes, and the way they were built.
+Millersville is home. We've been the local plumbing and heating shop here since 1961 — these days out of our shop on North George Street — so when something goes wrong, you're calling someone who's actually down the road, not a call center.
 
-## Your neighbor for plumbing and HVAC
+### Municipal in town, wells just outside
 
-For decades, Millersville families have known us as their plumber. We still do that work — and we also handle full heating and cooling installs: furnace and AC, heat pumps, boilers, and ductless. Same family, same standards, whether it's a leak or a new system.
+Millersville borough is on municipal water, but most homes just outside of town run on private wells — and we work on both every day. We replace well-pump pressure tanks, swap the aging water-meter valves original to a lot of these older homes, and test and treat well water, which around here runs hard and usually needs a properly sized softener to handle the scale, plus a UV system to keep it safe to drink. We test first and put in what your water actually needs — no oversizing to hit a price point.
 
-## We know the homes here
+### Older homes, familiar systems
 
-A lot of Millersville homes have some history to them — tight mechanical spaces, older ductwork, additions that were never quite balanced. Sixty-five years in this town means we've worked in houses like yours before. When we put in a new system, we run a real load calculation and size it for your actual home, not a guess.
+A lot of Millersville is old, and it shows in the plumbing — cast-iron drain lines that need snaking and older copper supply lines starting to fail. On the heating side, most homes run a split system, a boiler or furnace paired with central AC, with a few boiler-only houses still around. Fuel is a mix of oil and natural gas; heat pumps are still the minority here, but we're seeing more go in every year. When a system's ready to replace, we size it with a real load calculation — the difference between comfort and a decade of headaches.
 
-## Straight answers, no pressure
+### What we're called for most
 
-We'll tell you honestly whether it's time to replace something or whether it has life left in it. We're an authorized dealer for Amana and Rheem, we back our installs with a 1-year labor guarantee (extendable up to 10), and we offer financing through Synchrony. Call and we'll set up a free, no-pressure quote.
+Everyday plumbing keeps us busy in Millersville — toilets, drains, leaks, and repairs, plus the well and water work above. But the side of our business growing fastest here is heating and cooling: furnace and AC replacements, boiler work, and full system installs sized to the house with a real load calculation. Whatever it is, you get our own crew, an honest recommendation, and no pressure.

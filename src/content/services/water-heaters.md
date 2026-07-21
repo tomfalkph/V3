@@ -7,8 +7,8 @@ pillar: "plumbing"
 isMoneyPage: false
 intent: "install"
 order: 1
-heroImage: null
-heroImageAlt: null
+heroImage: "IMG_20260713_130510.jpg"
+heroImageAlt: "Rheem electric water heater beside a Rheem air handler, installed by Tom Falk."
 faq:
   - q: "How long does a water heater last?"
     a: "A traditional tank usually gives you a good run, but rust-colored water, popping sounds, or a leak at the base are signs it's near the end. We'll tell you honestly whether yours has life left or whether replacing it now saves you a cold-shower emergency later."
