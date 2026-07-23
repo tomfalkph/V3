@@ -33,11 +33,11 @@ const moneyPages = services
           <p class="lead">
             {YEARS_IN_BUSINESS} years, same family — first as your plumber, now for full
             heating and cooling too. We size systems right instead of guessing, and we tell
-            you straight whether it's time to replace or not. No call center. No pressure.
+            you straight whether it's time to replace or not — straight answers, no pressure.
           </p>
           <div class="btn-row">
-            <a class="btn btn--lg" href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>
-            <a class="btn btn--ghost btn--lg" href="#quote">Request a free quote</a>
+            <a class="btn btn--lg" href={`tel:${BUSINESS.phoneTel}`} data-track="call" data-track-loc="hero">Call {BUSINESS.phoneDisplay}</a>
+            <a class="btn btn--ghost btn--lg" href="#quote" data-track="quote" data-track-loc="hero">Request a free quote</a>
           </div>
         </div>
         <div class="hero-media">

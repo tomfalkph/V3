@@ -32,6 +32,9 @@ interface Props {
   ogImage?: string;
   /** Optional above-the-fold image to preload (e.g. the homepage hero logo). */
   preloadImage?: string;
+  /** Where the sticky "Quote" button points. Pages WITH the lead form use the
+   *  in-page anchor (#quote, default); pages without it pass "/contact#quote". */
+  quoteHref?: string;
 }
 
 const {
@@ -41,6 +44,7 @@ const {
   schemas = [],
   ogImage = SEO.ogImage,
   preloadImage,
+  quoteHref = '#quote',
 } = Astro.props;
 
 const canonical = new URL(canonicalPath, BUSINESS.siteUrl).href;
@@ -86,9 +90,36 @@ const jsonLd = [localBusinessSchema(), ...schemas];
     </main>
     <Footer />
 
-    <!-- Sticky mobile click-to-call -->
-    <nav class="callbar" aria-label="Call Tom Falk">
-      <a href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>
+    <!-- Sticky mobile action bar: Call / Text / Quote. Always one thumb-tap from
+         the next action (the trust moment is decided in ~10s on a phone). -->
+    <nav class="callbar" aria-label="Contact Tom Falk">
+      <a href={`tel:${BUSINESS.phoneTel}`} data-track="call" data-track-loc="sticky-bar" aria-label={`Call ${BUSINESS.phoneDisplay}`}>
+        <span class="callbar__ico" aria-hidden="true">&#9742;</span><span>Call</span>
+      </a>
+      <a href={`sms:${BUSINESS.phoneSms}`} data-track="text" data-track-loc="sticky-bar" aria-label="Text us">
+        <span class="callbar__ico" aria-hidden="true">&#128172;</span><span>Text</span>
+      </a>
+      <a href={quoteHref} data-track="quote" data-track-loc="sticky-bar" aria-label="Request a quote">
+        <span class="callbar__ico" aria-hidden="true">&#9998;</span><span>Quote</span>
+      </a>
     </nav>
+
+    <!-- Interaction tracking. Pushes call / text / quote / form-submit events to a
+         standard dataLayer so the office can attribute every site-driven contact from
+         cutover day. No third-party script is loaded here (keeps CWV green); when the
+         GTM-T3MGR7R container is added, these events flow straight through.
+         [FLAG: add the GTM container snippet to make tracking live — one owner step.] -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest ? e.target.closest('[data-track]') : null;
+        if (!a) return;
+        window.dataLayer.push({
+          event: 'contact_click',
+          contact_method: a.getAttribute('data-track'),
+          contact_location: a.getAttribute('data-track-loc') || 'unknown',
+        });
+      }, true);
+    </script>
   </body>
 </html>

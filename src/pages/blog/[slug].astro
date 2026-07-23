@@ -22,7 +22,7 @@ const articleSchema = {
   author: { '@type': 'Organization', name: 'Tom Falk Plumbing & Heating' },
 };
 ---
-<BaseLayout title={d.title} description={d.description} canonicalPath={path} schemas={[articleSchema]}>
+<BaseLayout title={d.title} description={d.description} canonicalPath={path} schemas={[articleSchema]} quoteHref="/contact#quote">
   <article class="section">
     <div class="container prose">
       <h1>{d.h1}</h1>

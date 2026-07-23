@@ -23,8 +23,11 @@ import logo from '../assets/logo-tomfalk.svg?url';
       <a href="/contact">Contact</a>
     </nav>
 
-    <a class="btn header-call" href={`tel:${BUSINESS.phoneTel}`}>
-      {BUSINESS.phoneDisplay}
-    </a>
+    <div class="header-cta">
+      <a class="header-text" href={`sms:${BUSINESS.phoneSms}`} data-track="text" data-track-loc="header" aria-label="Text us">Text&nbsp;us</a>
+      <a class="btn header-call" href={`tel:${BUSINESS.phoneTel}`} data-track="call" data-track-loc="header">
+        {BUSINESS.phoneDisplay}
+      </a>
+    </div>
   </div>
 </header>

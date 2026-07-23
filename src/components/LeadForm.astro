@@ -63,6 +63,12 @@ const { source = 'site' } = Astro.props;
         body,
       });
       if (!res.ok) throw new Error(String(res.status));
+      // Attribution: log the successful lead to the dataLayer (GTM-ready).
+      (window as any).dataLayer = (window as any).dataLayer || [];
+      (window as any).dataLayer.push({
+        event: 'lead_submit',
+        form_source: form.querySelector('input[name="source"]')?.getAttribute('value') || 'site',
+      });
       form.reset();
       status.textContent = "Thanks — we got it and we'll call you back.";
     } catch {

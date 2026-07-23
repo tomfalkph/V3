@@ -34,8 +34,9 @@ const shown = reviews.slice(0, limit);
           </figure>
         ))}
       </div>
-      <p style="margin-top:1.25rem">
+      <p class="review-actions" style="margin-top:1.25rem">
         <a class="btn btn--ghost" href={BUSINESS.googleProfileUrl} rel="noopener">See all reviews on Google</a>
+        <a class="btn btn--ghost" href={BUSINESS.googleReviewUrl} rel="noopener" data-track="review" data-track-loc="reviews">Leave us a review</a>
       </p>
       {!live && import.meta.env.DEV && (
         <p class="flag">Showing saved reviews — set GOOGLE_PLACES_API_KEY + GOOGLE_PLACE_ID to pull live.</p>

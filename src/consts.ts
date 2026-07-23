@@ -28,6 +28,10 @@ export const BUSINESS = {
   // Phone — always rendered as a tel: link via PHONE_TEL below.
   phoneDisplay: '(717) 872-2850',
   phoneTel: '+17178722850',
+  // SMS target for the "Text us" tap (sticky bar + header). Swappable in ONE place.
+  // Defaults to the main line. [FLAG: confirm (717) 872-2850 can RECEIVE texts before
+  // launch — if the office uses a separate textable line, change ONLY this value.]
+  phoneSms: '+17178722850',
 
   // --- Canonical web identity (non-www apex — the locked single version) ---
   siteUrl: 'https://tomfalkph.com',
@@ -118,6 +122,12 @@ export const BUSINESS = {
   // [FLAG: PLACEHOLDER — replace with the real Google Business Profile / Maps URL.
   // The Place ID also feeds the live reviews pull; see .env.example + googleReviews.ts.]
   googleProfileUrl: 'https://www.google.com/maps/search/?api=1&query=Tom+Falk+Plumbing+%26+Heating+Millersville+PA',
+
+  // Direct "write a review" deep link the office can text/email happy customers.
+  // [FLAG: PLACEHOLDER — the canonical form is
+  // https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID
+  // Drop in the real Google Place ID before launch so this opens the review box directly.]
+  googleReviewUrl: 'https://www.google.com/maps/search/?api=1&query=Tom+Falk+Plumbing+%26+Heating+Millersville+PA',
 } as const;
 
 /** Derived "since 1961" trust anchor + current years-in-business. */
