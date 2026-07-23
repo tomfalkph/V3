@@ -3,8 +3,8 @@
  * of truth in consts.ts. Clean JSON-LD, STRUCTURED address (rules §1). Generated
  * so it can never drift from the NAP the rest of the site uses.
  *
- * [FLAG: logo + image point at PLACEHOLDER local paths — Trevor supplies the real
- * logo SVG/PNG and a real job photo; drop them at the paths below.]
+ * logo + image now point at real self-hosted assets (the vector logo and a real
+ * job-photo share card in public/images).
  * [FLAG: sameAs includes the Google profile URL — replace the placeholder Maps-search
  * URL in consts.googleProfileUrl with the REAL Google Business Profile URL.]
  */
@@ -18,9 +18,9 @@ export function localBusinessSchema() {
     name: BUSINESS.name,
     legalName: BUSINESS.legalName,
     url: BUSINESS.siteUrl,
-    // PLACEHOLDER asset paths — self-hosted in this repo once real files land.
-    logo: `${BUSINESS.siteUrl}/images/PLACEHOLDER-logo.png`,
-    image: `${BUSINESS.siteUrl}/images/PLACEHOLDER-van.jpg`,
+    // Real self-hosted brand assets: the vector logo + a real job photo.
+    logo: `${BUSINESS.siteUrl}/images/logo-tomfalk.svg`,
+    image: `${BUSINESS.siteUrl}/images/og-tomfalk-1200x630.jpg`,
     telephone: BUSINESS.phoneTel,
     priceRange: BUSINESS.priceRange,
     paymentAccepted: BUSINESS.paymentAccepted,

@@ -71,6 +71,7 @@ const jsonLd = [localBusinessSchema(), ...schemas];
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImageAbs} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImageAbs} />
 
     <!-- Clean JSON-LD (NOT microdata). LocalBusiness site-wide + any page schema. -->
     {jsonLd.map((schema) => (

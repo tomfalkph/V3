@@ -59,8 +59,10 @@ export const BUSINESS = {
   // --- Licenses — DISPLAY these (trust + a wedge vs unlicensed/subcontractor crews).
   // [FLAG: fill the REAL numbers before launch. Empty = a "needs license #" flag renders,
   // never a fake number.] ---
-  licenseHIC: '', // PA Home Improvement Contractor # (e.g. PA000000)
-  licenseMasterPlumber: '', // Master plumber license #
+  // PA Home Improvement Contractor registration — the checkable state credential
+  // (PA has no statewide plumber license). Displayed in the footer as "PA HIC #...".
+  licenseHIC: 'PA026729',
+  licenseMasterPlumber: '', // Master plumber license # (PA issues none statewide; leave empty)
 
   // --- Hours for openingHoursSpecification schema + footer.
   // [FLAG: PLACEHOLDER hours. hoursConfirmed stays FALSE until Trevor confirms — while
@@ -133,6 +135,7 @@ export const SEO = {
   defaultTitle: 'Plumbing and Heating in Lancaster County PA - Tom Falk',
   defaultDescription:
     'Family plumbing, heating, and cooling in Millersville and Lancaster County PA. Honest work, sized right, since 1961. Call for a free quote today.',
-  // Placeholder social share image — [FLAG: needs a REAL job photo from Trevor].
-  ogImage: '/images/PLACEHOLDER-og-image.jpg',
+  // Social share card: real 1200x630 crop of the branded-van / AC-install photo
+  // (public/images/og-tomfalk-1200x630.jpg).
+  ogImage: '/images/og-tomfalk-1200x630.jpg',
 } as const;
