@@ -9,8 +9,8 @@ relatedServices:
   - well-pumps
   - septic-service
 order: 8
-heroImage: "well-pump-puller.jpg"
-heroImageAlt: "The Tom Falk crew pulling a well pump for replacement in the Southern End."
+heroImage: "owner-well-southern-end.jpg"
+heroImageAlt: "Trevor from Tom Falk lowering himself into a hand-dug well on a Southern End service call."
 faq:
   - q: "My well pump quit - how fast can you get out to Quarryville?"
     a: "We know a dead well means no water, so we don't sit on Quarryville calls. We'll pull and replace the pump and check the pressure tank and switch while we're there - those are often the real culprit - so you're not paying for a pump you didn't actually need."

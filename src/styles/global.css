@@ -168,7 +168,13 @@ a:not(.btn):not(.card):not(.brand):focus-visible { text-decoration: underline; }
   .header-cta { margin-left: 0.75rem; }
   .header-call { padding: 0.6rem 1.1rem; font-size: 0.98rem; }
 }
-@media (max-width: 859px) { .header-cta { display: none; } }
+@media (max-width: 859px) {
+  .header-cta { display: none; }
+  /* Mobile header = logo only (nav + CTA live in the sticky bottom bar). Center the
+     logo and tighten the height so it doesn't read as a big empty white band. */
+  .header-inner { justify-content: center; padding-block: 0.4rem; }
+  .brand-logo { width: clamp(130px, 42vw, 168px); }
+}
 
 /* ---- Footer ---- */
 .site-footer { background: var(--bg-soft); border-top: 1px solid var(--line); margin-top: 3rem; padding-block: 2.5rem 5rem; }
@@ -204,6 +210,11 @@ body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
 .review figcaption { color: var(--ink); font-weight: 700; font-size: 0.95rem; }
 .stars { color: #e0a400; letter-spacing: 2px; }
 .review-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+/* Owner / crew photo inside a prose section (e.g. About) with a caption. */
+.owner-figure { margin: 1.75rem 0; }
+.owner-figure img { width: 100%; height: auto; display: block; border-radius: var(--radius); box-shadow: var(--shadow-card); }
+.owner-figure figcaption { margin-top: 0.6rem; font-size: 0.95rem; color: var(--muted); font-style: italic; }
 
 /* ---- FAQ ---- */
 .faq-item { border-top: 1px solid var(--line); padding: 1rem 0; }
