@@ -35,37 +35,39 @@ async function fetchLive(): Promise<ReviewsData> {
     return { rating: BUSINESS.ratingValue, count: BUSINESS.reviewCount, reviews: FALLBACK_REVIEWS, live: false };
   }
   try {
-    const url =
-      'https://maps.googleapis.com/maps/api/place/details/json' +
-      `?place_id=${encodeURIComponent(PLACE_ID)}` +
-      '&fields=rating,user_ratings_total,reviews' +
-      '&reviews_sort=most_relevant&reviews_no_translations=true' +
-      `&key=${encodeURIComponent(API_KEY)}`;
-    const res = await fetch(url);
+    // Places API (New): GET the place resource with a field mask. The API key
+    // travels in a header, never the URL. Returns the true rating + total count
+    // and up to 5 Google-chosen reviews.
+    const url = `https://places.googleapis.com/v1/places/${encodeURIComponent(PLACE_ID)}`;
+    const res = await fetch(url, {
+      headers: {
+        'X-Goog-Api-Key': API_KEY,
+        'X-Goog-FieldMask': 'rating,userRatingCount,reviews',
+      },
+    });
     const data = await res.json();
-    if (data.status === 'OK' && data.result) {
-      const r = data.result;
-      const reviews: Review[] = (r.reviews || [])
-        .filter((rv: any) => rv.text && rv.text.trim())
+    if (res.ok && (data.rating != null || Array.isArray(data.reviews))) {
+      const reviews: Review[] = (data.reviews || [])
         .map((rv: any) => ({
-          quote: rv.text.trim(),
-          name: rv.author_name,
+          quote: (rv.originalText?.text ?? rv.text?.text ?? '').trim(),
+          name: rv.authorAttribution?.displayName ?? 'Google reviewer',
           source: 'Google',
-          authorUrl: rv.author_url,
+          authorUrl: rv.authorAttribution?.uri,
           rating: rv.rating,
-        }));
+        }))
+        .filter((rv: Review) => rv.quote);
       if (reviews.length > 0) {
         return {
-          rating: r.rating ?? BUSINESS.ratingValue,
-          count: r.user_ratings_total ?? BUSINESS.reviewCount,
+          rating: data.rating ?? BUSINESS.ratingValue,
+          count: data.userRatingCount ?? BUSINESS.reviewCount,
           reviews,
           live: true,
         };
       }
     }
-    console.warn('[reviews] Places API returned no usable reviews (status=' + data.status + '); using fallback.');
+    console.warn('[reviews] Places API (New) returned no usable reviews (HTTP ' + res.status + '); using fallback.');
   } catch (err) {
-    console.warn('[reviews] Places API fetch failed; using fallback.', err);
+    console.warn('[reviews] Places API (New) fetch failed; using fallback.', err);
   }
   return { rating: BUSINESS.ratingValue, count: BUSINESS.reviewCount, reviews: FALLBACK_REVIEWS, live: false };
 }
