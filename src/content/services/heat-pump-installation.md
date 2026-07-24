@@ -29,7 +29,3 @@ Like every system we install, a heat pump gets sized to your home's actual needs
 ## Heat pump repair
 
 A heat pump runs year-round, so when it stops heating or cooling the way it should, you want it looked at by someone who knows the system. We repair heat pumps too — we diagnose the real cause instead of throwing parts at it, and if yours is old and failing, we'll give you the honest math on repair versus replacement. We're not here to sell you a new system you don't need.
-
-## Backed up and financed
-
-Our installs carry a 1-year labor guarantee, extendable up to 10 years, plus the manufacturer's warranty. Financing is available through Synchrony. Call and we'll set up a free, no-pressure quote.

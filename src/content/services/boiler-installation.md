@@ -24,6 +24,6 @@ Radiator and baseboard heat, older piping, tight mechanical rooms — we've work
 
 When a boiler starts acting up — no heat, banging and knocking, a leak, or rooms that won't warm up evenly — it takes someone who actually works on these systems to find what's wrong. We repair steam and hot-water boilers, track down the real cause instead of guessing, and give you a straight read on whether a repair makes sense or the system is ready to be replaced.
 
-## Straight answers, backed up
+## Straight answers on repair or replace
 
-If your boiler is limping along, we'll give you an honest read on repair versus replacement — and if it has life left, we'll say so. New installs carry our 1-year labor guarantee, extendable up to 10 years, plus the manufacturer's warranty, with financing available through Synchrony.
+If your boiler is limping along, we'll give you an honest read on repair versus replacement — and if it has life left, we'll say so.

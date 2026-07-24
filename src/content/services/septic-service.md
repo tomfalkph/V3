@@ -26,4 +26,4 @@ Septic work means digging, and we have our own excavation capability — so the 
 
 ## We know rural properties
 
-Decades out on well-and-septic properties across the county means we understand how these systems fit the land they sit on. Our work carries a 1-year labor guarantee, extendable up to 10 years, plus manufacturer warranties, with financing available through Synchrony.
+Decades out on well-and-septic properties across the county means we understand how these systems fit the land they sit on.

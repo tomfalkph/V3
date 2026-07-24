@@ -33,7 +33,3 @@ A lot of rural Lancaster County wells run hard or iron-heavy. Along with pumps a
 ## Built for how rural properties actually work
 
 A lot of the county is on well and septic, and those systems have their own quirks. Decades out on these properties means we know them, and we show up ready to get your water back on.
-
-## Backed up
-
-Our work carries our standard labor guarantee plus the manufacturer's warranty on the equipment. Call and we'll get out to you.

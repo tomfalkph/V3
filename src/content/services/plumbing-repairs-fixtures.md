@@ -28,7 +28,3 @@ The common repairs and fixtures homes need us for:
 - Faucets and sinks
 - Garbage disposals
 - Leaks and everyday repairs
-
-## Backed up
-
-Our repair work carries a 1-year labor guarantee, plus manufacturer warranties on any fixtures we install. Financing is available through Synchrony for larger jobs. Call and we'll get you on the schedule.

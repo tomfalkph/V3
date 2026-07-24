@@ -20,6 +20,6 @@ Your water main is the line that carries water from the street into your home. W
 
 A main line runs underground, so the first job is figuring out where the trouble actually is. We've done this work in Lancaster County since 1961, and we'll locate the problem and tell you honestly whether it needs a repair or a full replacement — not just start tearing up the yard. And because we have our own excavation capability, digging up and replacing a main is handled by our own crew, start to finish.
 
-## Licensed hands, backed up
+## Licensed hands
 
-We're licensed master and journeymen plumbers, so the work is done right and to code. Repairs and replacements carry our 1-year labor guarantee, extendable up to 10 years, plus manufacturer warranties on the materials. If you think your main is leaking, call us — the sooner we look, the less damage it does.
+We're licensed master and journeymen plumbers, so the work is done right and to code. If you think your main is leaking, call us — the sooner we look, the less damage it does.

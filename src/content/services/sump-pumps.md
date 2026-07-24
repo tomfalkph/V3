@@ -23,7 +23,3 @@ A pump has to move water fast enough for your pit and your water table. We set y
 ## A backup before you need it
 
 Storms and power outages tend to arrive together, which is the worst time for a pump to lose power. If keeping the basement dry through an outage matters to you, tell us and we'll go over the options — no pressure either way.
-
-## Backed up
-
-Our installs carry a 1-year labor guarantee, extendable up to 10 years, plus manufacturer warranties. Financing is available through Synchrony. Call and we'll help you keep the basement dry.

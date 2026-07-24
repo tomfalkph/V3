@@ -20,6 +20,6 @@ Some rooms were never going to be comfortable on the existing system — an addi
 
 We install mini-splits where they genuinely make sense, and we'll tell you when they do and when a different approach fits better. Sixty-five years working in Lancaster County homes means we've seen the tricky layouts, and we know how to make a space comfortable that never was before.
 
-## Sized, installed, and backed up
+## Sized and installed right
 
-We size the unit to the space it's serving, install it clean, and stand behind it with our 1-year labor guarantee (extendable up to 10 years) plus the manufacturer's warranty. Financing is available through Synchrony.
+We size the unit to the space it's serving and install it clean — and because we're your plumber too, the electrical and line-set work is handled by the same team.

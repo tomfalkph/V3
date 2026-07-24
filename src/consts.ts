@@ -43,11 +43,10 @@ export const BUSINESS = {
   foundingYear: 1961,
   founders: 'Jim and Edna Falk', // verified from live site
   // Amana + Rheem authorized dealer, real Manual-J load calcs,
-  // 1-yr labor guarantee (extendable to 10), Synchrony financing.
+  // 1-yr labor guarantee (extendable to 10), multiple financing options.
   brandsAuthorized: ['Amana', 'Rheem'],
   laborGuaranteeYears: 1,
   laborGuaranteeMaxYears: 10,
-  financingPartner: 'Synchrony',
   // Verified from live site: licensed master and journeymen plumbers.
   credentials: 'Licensed master and journeymen plumbers',
   // Real rating shown on the live site (Google). Displayed as content; see
@@ -58,7 +57,7 @@ export const BUSINESS = {
 
   priceRange: '$$',
   // Payment methods (schema paymentAccepted). [FLAG: confirm before launch.]
-  paymentAccepted: 'Cash, Check, Credit Card, Financing through Synchrony',
+  paymentAccepted: 'Cash, Check, Credit Card, Financing available',
 
   // --- Licenses — DISPLAY these (trust + a wedge vs unlicensed/subcontractor crews).
   // [FLAG: fill the REAL numbers before launch. Empty = a "needs license #" flag renders,

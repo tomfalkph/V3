@@ -19,7 +19,3 @@ Gas work is not the place to cut corners. A gas line has to be run right, tested
 ## Done safely, done to code
 
 Whether you're adding a gas range, moving to a gas dryer, feeding a heater, or running a line out to the grill, the line has to be sized correctly, sealed tight, and tested before anyone uses it. We're licensed master and journeymen plumbers, so safety and code aren't afterthoughts — they're the whole job. We don't rush this work and we don't hand it off.
-
-## Backed up and financed
-
-Every gas line we run is backed by our 1-year labor guarantee, extendable up to 10 years, plus manufacturer warranties on the materials. Financing is available through Synchrony. If you're adding a gas appliance and need a line run to it, give us a call and we'll get it done right.

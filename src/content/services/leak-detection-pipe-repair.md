@@ -23,7 +23,3 @@ Water travels, so the wet spot is rarely where the leak actually is. We track do
 ## Caught early saves you money
 
 A small leak today is a repair. Left alone, it becomes rot, mold, and a much bigger bill. If something seems off, calling sooner almost always costs you less in the end.
-
-## Backed up
-
-Our work carries a 1-year labor guarantee, extendable up to 10 years, plus manufacturer warranties on parts. Financing is available through Synchrony. Call and we'll track it down.

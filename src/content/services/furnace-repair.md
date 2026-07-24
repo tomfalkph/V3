@@ -25,7 +25,3 @@ No heat can come from a lot of places — ignition, the blower, a bad sensor, a 
 ## Honest repair vs. replace
 
 If your furnace is sound and the fix is reasonable, we repair it and you're back to warm. If it's aging out, breaking down every winter, or showing a safety issue, we'll tell you plainly that replacing it may serve you better. We won't push a new unit you don't need.
-
-## Backed by our guarantee
-
-Our repair work carries a 1-year labor guarantee. If a new furnace turns out to be the smarter move, financing is available through Synchrony. Give us a call and we'll get you on the schedule.

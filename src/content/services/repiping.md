@@ -20,6 +20,6 @@ Old homes around here were plumbed with materials that don't last forever. When 
 
 Low water pressure, rust-colored water, and repeat leaks are all signs the pipes are worn out from the inside. We've plumbed Lancaster County homes since 1961, so we know what's behind the walls in these houses. We'll give you a straight answer on whether a repair will hold or whether you're better off replacing the lines.
 
-## Done clean, backed up
+## Done clean
 
-We're licensed master and journeymen plumbers, and we handle the whole job — old pipe out, new pipe in, cleaned up after. Every repipe carries our 1-year labor guarantee, extendable up to 10 years, plus manufacturer warranties on the materials. Financing is available through Synchrony so a big job doesn't have to land all at once. Give us a call and we'll come take a look.
+We're licensed master and journeymen plumbers, and we handle the whole job — old pipe out, new pipe in, cleaned up after. Give us a call and we'll come take a look.

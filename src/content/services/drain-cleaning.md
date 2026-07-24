@@ -23,7 +23,3 @@ Clearing a clog is easy. Figuring out why it keeps happening is the part that ac
 ## We know rural systems
 
 A lot of the county is on well and septic, and drains on those systems behave differently. Decades on these properties means we know the difference and treat your home accordingly.
-
-## Backed up
-
-Our work carries a 1-year labor guarantee, extendable up to 10 years. Call and we'll get your drains running again.

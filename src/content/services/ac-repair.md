@@ -25,7 +25,3 @@ A lot of AC problems look the same from the thermostat but come from very differ
 ## Straight talk on repair vs. replace
 
 If your unit has good years left and the fix is reasonable, we'll repair it and move on. But if it's old and you're calling every summer, we'll tell you honestly that a new system may cost you less over time. We're not here to sell you a unit you don't need, and we're not here to keep patching one that's done.
-
-## Backed by our guarantee
-
-Repair work is backed by our 1-year labor guarantee. If you're weighing a bigger job, financing is available through Synchrony. Call us and we'll get you scheduled.

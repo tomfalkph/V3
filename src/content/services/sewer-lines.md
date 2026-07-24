@@ -23,7 +23,3 @@ Backups can come from a blockage, a damaged line, roots, or a problem further do
 ## We understand septic properties
 
 Much of the county runs on well and septic, and a sewer or main-line issue on those systems has its own quirks. Decades out on rural properties means we know how they work and what to check.
-
-## Backed up
-
-Our work carries a 1-year labor guarantee, extendable up to 10 years, plus manufacturer warranties on parts. Financing is available through Synchrony. Call and we'll get out to you.

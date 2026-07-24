@@ -79,7 +79,7 @@ const schemas = [serviceSchema, breadcrumbs, ...(faqSchema ? [faqSchema] : [])];
       <aside class="midcta">
         <p>
           <strong>Ready for a straight answer?</strong> Call {BUSINESS.phoneDisplay} for a free,
-          no-pressure quote{d.isMoneyPage ? ` — financing available through ${BUSINESS.financingPartner}` : ''}.
+          no-pressure quote — every job is backed by our guarantee{d.isMoneyPage ? `, and we offer multiple financing options` : ''}.
         </p>
         <a class="btn" href={`tel:${BUSINESS.phoneTel}`}>Call {BUSINESS.phoneDisplay}</a>
       </aside>

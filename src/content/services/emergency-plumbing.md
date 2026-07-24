@@ -23,7 +23,3 @@ When water is running where it shouldn't, the first job is stopping it and the s
 ## Frozen and burst pipes
 
 Our winters freeze pipes — especially in crawl spaces, exterior walls, and unheated corners — and a frozen pipe can split and burst when it thaws. We thaw, repair, and replace burst lines, and we'll point out where you're likely to freeze again so you can head it off next winter.
-
-## Backed up
-
-Emergency repairs carry our 1-year labor guarantee, extendable up to 10 years, plus manufacturer warranties on parts. Financing is available through Synchrony if the fix turns into a bigger job. Call and we'll get moving.

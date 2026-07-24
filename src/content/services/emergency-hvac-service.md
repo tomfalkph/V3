@@ -26,4 +26,4 @@ It's tempting to throw a part at a dead system and hope. We don't work that way.
 
 ## Repair or replace — a straight answer
 
-If a repair gets you running and the system has good years left, that's what we'll do. If it's old and failing and you're better off replacing it, we'll tell you that too, and we'll never push you into a new unit you don't need. Emergency repairs are backed by our 1-year labor guarantee, and financing is available through Synchrony if a bigger job makes sense.
+If a repair gets you running and the system has good years left, that's what we'll do. If it's old and failing and you're better off replacing it, we'll tell you that too, and we'll never push you into a new unit you don't need.

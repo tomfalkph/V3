@@ -15,7 +15,7 @@ faq:
   - q: "Can you replace just the AC and keep my furnace?"
     a: "Usually, yes — if your furnace is in good shape and the systems are compatible, we can replace the AC on its own. We'll tell you honestly if pairing them makes more sense for how they run together."
   - q: "Do you offer financing on a new AC?"
-    a: "Yes, through Synchrony, so a new system doesn't have to land all at once. Ask us about your options when you call."
+    a: "Yes — we offer multiple financing options, so a new system doesn't have to land all at once. Ask us about your options when you call."
 ---
 
 When your central air finally gives up — usually on the first real hot stretch — you don't want a sales pitch, you want a straight answer and a system that works. We've cooled Lancaster County homes since 1961, and we install AC the way it should be done: sized to your actual house, installed clean, and backed up.
@@ -31,7 +31,3 @@ We're an authorized dealer for Amana and Rheem — solid, serviceable equipment 
 ## Straight talk on repair vs. replace
 
 If your AC is fifteen years or older and you're calling for a repair every summer, a new system usually costs you less over time — lower bills, fewer breakdowns, and cooling that keeps up. But if yours has life left in it, we'll tell you that too. We're not here to sell you a unit you don't need.
-
-## Backed up and financed
-
-Every install is backed by our 1-year labor guarantee, with options to extend labor coverage up to 10 years, plus the manufacturer's warranty on the equipment. And we offer financing through Synchrony so you can spread the cost out.

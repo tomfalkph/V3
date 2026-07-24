@@ -24,4 +24,4 @@ Tankless is about matching the unit to how much hot water your home actually use
 
 ## The honest read
 
-Tankless isn't automatically right for every home, and we'll tell you straight whether it fits yours or whether a good tank makes more sense. Either way, the install carries our 1-year labor guarantee plus the manufacturer's warranty, with financing available through Synchrony.
+Tankless isn't automatically right for every home, and we'll tell you straight whether it fits yours or whether a good tank makes more sense.

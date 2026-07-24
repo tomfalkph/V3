@@ -26,4 +26,4 @@ Hard water is the most common water complaint we hear, especially on a well. A s
 
 ## Installed and serviced by licensed plumbers
 
-We install and service water treatment as part of the plumbing work we've done since 1961. We're licensed master and journeymen plumbers, so it's connected right and it keeps working. Our installs carry a 1-year labor guarantee, extendable up to 10 years, plus manufacturer warranties, with financing available through Synchrony. Tell us what you're seeing in your water and we'll point you the right way.
+We install and service water treatment as part of the plumbing work we've done since 1961. We're licensed master and journeymen plumbers, so it's connected right and it keeps working. Tell us what you're seeing in your water and we'll point you the right way.

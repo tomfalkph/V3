@@ -23,7 +23,3 @@ A tank that's too small leaves you short on hot water. One that's too big wastes
 ## Repair or replace — the honest read
 
 Not every water heater problem means a new unit. Sometimes it's a part, sometimes the tank is done. We find the real cause and tell you straight, instead of pushing a replacement you don't need. If a tankless unit makes more sense for your home, we'll walk you through that option too.
-
-## Backed up
-
-Our work carries a 1-year labor guarantee, extendable up to 10 years, plus the manufacturer's warranty. Financing is available through Synchrony. Call and we'll get you sorted.

@@ -16,7 +16,7 @@ faq:
     a: "Yes. Heating gets sized just like cooling — to your home's actual size, layout, and insulation. An oversized furnace short-cycles and wears out; a right-sized one runs steady and lasts."
 ---
 
-When the furnace quits in January, you need someone who picks up and gives you a straight answer — not a call center. We've kept Lancaster County homes warm since 1961, and we install furnaces sized to your actual home and backed by a real guarantee.
+When the furnace quits in January, you need someone who picks up and gives you a straight answer. We've kept Lancaster County homes warm since 1961, and we install furnaces sized to your actual home and backed by a real guarantee.
 
 ## Sized to your home, not the old one
 
@@ -29,7 +29,3 @@ We're an authorized dealer for Amana and Rheem — dependable heating equipment 
 ## We know these older homes
 
 A lot of houses around here weren't built with modern heating in mind — tight spaces, older ductwork, additions that were never balanced. Sixty-five years in these neighborhoods means we've seen it and we know how to make a new furnace work in a house with some history to it.
-
-## Backed up and financed
-
-Every install carries our 1-year labor guarantee, extendable up to 10 years, plus the manufacturer's warranty. Financing is available through Synchrony so a new furnace doesn't have to land all at once.
