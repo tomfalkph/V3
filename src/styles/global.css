@@ -172,8 +172,8 @@ a:not(.btn):not(.card):not(.brand):focus-visible { text-decoration: underline; }
   .header-cta { display: none; }
   /* Mobile header = logo only (nav + CTA live in the sticky bottom bar). Center the
      logo and tighten the height so it doesn't read as a big empty white band. */
-  .header-inner { justify-content: center; padding-block: 0.25rem; }
-  .brand-logo { width: clamp(155px, 47vw, 195px); }
+  .header-inner { justify-content: center; padding-block: 0.5rem; }
+  .brand-logo { width: clamp(120px, 34vw, 150px); }
 }
 
 /* ---- Footer ---- */
