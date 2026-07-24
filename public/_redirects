@@ -1,0 +1,66 @@
+# =====================================================================
+# 301 MAP — old Octane/RedBrick URLs -> new Astro site (cutover).
+# Netlify serves existing pages first, so same-path pages (/, /reviews,
+# /blog, /contact-us handled below) don't need rules. First match wins;
+# specific rules are listed before the /blog/* wildcard.
+# =====================================================================
+
+# --- Pillar hubs ---
+/air-conditioning                                 /services/heating-cooling                 301
+/heating                                          /services/heating-cooling                 301
+/plumbing                                         /services/plumbing                        301
+
+# --- Air conditioning ---
+/air-conditioning/ac-repair                       /services/ac-repair                       301
+/air-conditioning/ac-installation                 /services/ac-installation-replacement     301
+/air-conditioning/ac-tune-up                      /services/hvac-maintenance-tune-up        301
+/air-conditioning/smart-thermostat-installation   /services/heating-cooling                 301
+
+# --- Heating ---
+/heating/furnace-repair                           /services/furnace-repair                  301
+/heating/furnace-installation                     /services/furnace-installation-replacement 301
+/heating/furnace-tune-up                          /services/hvac-maintenance-tune-up        301
+
+# --- HVAC install/replace ---
+/hvac/installation-replacement                    /services/hvac-installation-replacement   301
+
+# --- Plumbing ---
+/plumbing/water-heaters                           /services/water-heaters                   301
+/plumbing/drain-cleaning                          /services/drain-cleaning                  301
+/plumbing/sewer-lines                             /services/sewer-lines                     301
+/plumbing/leak-detection-pipe-repair              /services/leak-detection-pipe-repair      301
+/plumbing/tankless-water-heaters                  /services/tankless-water-heaters          301
+/plumbing/repiping                                /services/repiping                        301
+/plumbing/water-mains                             /services/water-mains                     301
+/plumbing/well-pumps                              /services/well-pumps                      301
+/plumbing/water-treatment                         /services/water-treatment                 301
+/plumbing/gas-lines                               /services/gas-lines                       301
+
+# --- Town pages: old {town}-pa-plumbing-heating-air -> /service-areas/{town} ---
+/lancaster-pa-plumbing-heating-air                /service-areas/lancaster                  301
+/leola-pa-plumbing-heating-air                    /service-areas/leola                      301
+/manheim-pa-plumbing-heating-air                  /service-areas/manheim                    301
+/columbia-pa-plumbing-heating-air                 /service-areas/columbia                   301
+/elizabethtown-pa-plumbing-heating-air            /service-areas/elizabethtown              301
+/millersville-pa-plumbing-heating-air             /service-areas/millersville               301
+/quarryville-pa-plumbing-heating-air              /service-areas/quarryville                301
+/new-holland-pa-plumbing-heating-air              /service-areas/new-holland                301
+/ephrata-pa-plumbing-heating-air                  /service-areas/ephrata                    301
+/marietta-pa-plumbing-heating-air                 /service-areas/marietta                   301
+/lititz-pa-plumbing-heating-air                   /service-areas/lititz                     301
+# Denver dropped -> service-areas hub
+/denver-pa-plumbing-heating-air                   /service-areas                            301
+
+# --- Static pages ---
+/about-tom-falk                                   /about                                    301
+/contact-us                                       /contact                                  301
+/schedule-service                                 /contact                                  301
+# Membership page not built yet -> closest match (maintenance). Repoint to
+# /maintenance-plans once that page ships.
+/hvac-membership-plans                            /services/hvac-maintenance-tune-up        301
+# No privacy page on new site yet (FLAG: add one — the lead form collects PII).
+/privacy-policy                                   /                                         301
+
+# --- Blog: content deliberately not carried over (organic noise per SEO strategy).
+#     Any old post -> new blog index. ---
+/blog/*                                           /blog                                     301
