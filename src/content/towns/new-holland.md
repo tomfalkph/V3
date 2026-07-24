@@ -1,22 +1,29 @@
 ---
-title: "Plumbing, Heating and Cooling in New Holland PA - Tom Falk"
-description: "New Holland plumber and HVAC installer for rural properties on well and septic. Family-owned since 1961, based nearby in Millersville PA. Free quotes."
+title: "Plumbing and HVAC in New Holland PA - Tom Falk"
+description: "Heating, cooling, and plumbing in New Holland PA, including commercial work. Family shop in Millersville since 1961."
 h1: "Plumbing, Heating, and Cooling in New Holland, PA"
 townName: "New Holland"
 primaryService: "hvac-installation-replacement"
+relatedServices:
+  - hvac-installation-replacement
+  - hvac-maintenance-tune-up
+  - plumbing-repairs-fixtures
 order: 11
-heroImage: null
-heroImageAlt: null
+heroImage: "IMG_20260713_132258.jpg"
+heroImageAlt: "A U.S. Boiler high-efficiency boiler installed by Tom Falk."
+faq:
+  - q: "Do you handle commercial or light-industrial HVAC around New Holland?"
+    a: "Yes - that's often what brings us out that far. Commercial and light-industrial heating and cooling is different work from a house, and it's the kind of job we're glad to travel to New Holland for."
+  - q: "Is New Holland too far for Tom Falk?"
+    a: "For a small everyday repair, honestly, you're better off with someone nearby. For an install, a replacement, or a commercial job worth doing right, it's not too far at all."
 ---
 
-## Deep in farm country
+New Holland sits out toward the eastern edge of the county, where Lancaster starts to hand off toward Chester and Berks. It's farm country, but it's also a manufacturing town - it gave its name to New Holland Agriculture, and the equipment works and the farms around them give the place a working, industrial character you won't find in the tourist towns.
 
-New Holland sits out in the eastern part of the county, in the heart of the farmland and the Plain communities. A lot of homes here are rural, spread across acreage, and set up for country living. When we install heating and cooling out this way — furnaces, heat pumps, boilers, AC, or ductless — we size it with a real load calculation for that specific property.
+### The work that brings us east
 
-## Well and septic is our home turf
+We'll be straight: New Holland is at the far edge of where we range, and for an everyday repair you've got closer options - including well-established local contractors the area's close-knit communities have long relied on, whose reach naturally extends to their neighbors too. Where we earn the drive is the bigger work: system installs and replacements, commercial and light-industrial HVAC, and projects where getting it right the first time matters more than getting there in fifteen minutes.
 
-Many New Holland properties run on their own well and septic, and that's plumbing we know cold. We go back to 1961 as plumbers, so well pumps, pressure tanks, and water treatment are everyday work for us. If the water needs help, we can sort the plumbing side while we handle the heating and cooling.
+### A shop that travels well for the right job
 
-## A nearby shop, not a call center
-
-We're a family-owned outfit based in Millersville, close enough to actually show up and know your kind of home. We're an authorized Amana and Rheem dealer, we back installs with a 1-year labor guarantee extendable up to 10 years plus manufacturer warranties, and financing is available through Synchrony. Call for a free, no-pressure quote.
+When we take on work in New Holland, it's because it's the kind of job we're built for - done by our own crew, backed since 1961, and worth the trip for both of us. If that's what you've got, the distance isn't the problem.

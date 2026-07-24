@@ -106,7 +106,6 @@ export const BUSINESS = {
     'Ephrata',
     'Elizabethtown',
     'New Holland',
-    'Denver',
     'Lititz',
     'Manheim',
   ],

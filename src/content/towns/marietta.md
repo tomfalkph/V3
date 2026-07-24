@@ -1,24 +1,29 @@
 ---
-title: "Plumbing, Heating and Cooling in Marietta PA - Tom Falk"
-description: "Plumbing and HVAC in Marietta PA from Tom Falk. Family-owned since 1961, based nearby in Millersville. Right-sizing new systems for historic."
+title: "Plumbing and HVAC in Marietta PA - Tom Falk"
+description: "Plumbing and HVAC for Marietta PA's older river-town homes. Family shop near Millersville since 1961."
 h1: "Plumbing, Heating, and Cooling in Marietta, PA"
 townName: "Marietta"
 primaryService: "hvac-installation-replacement"
+relatedServices:
+  - hvac-installation-replacement
+  - ductless-mini-split-installation
+  - plumbing-repairs-fixtures
 order: 10
-heroImage: null
-heroImageAlt: null
+heroImage: "excavation-tight-quarters.jpg"
+heroImageAlt: "Tom Falk digging a water line in tight quarters beside an older home."
+faq:
+  - q: "Can you work on the plumbing in an old Marietta row home?"
+    a: "That's a good deal of what we do here. These homes carry decades of added-on, patched plumbing in tight spaces, and we're used to sorting out what's behind the wall and making a clean repair where there's barely room to work."
+  - q: "Can I get air conditioning in an old Marietta home with no ductwork?"
+    a: "Usually, and how we do it depends on the house. Some can take new ductwork; others are better suited to a ductless system that cools without tearing into old plaster. We look before we quote, so the comfort doesn't come at the cost of the house."
 ---
 
-Marietta is a historic river town along the Susquehanna, with old riverfront homes that have plenty of character — and plenty of quirks when it comes to heating, cooling, and plumbing. We've worked in houses like these for a long time.
+Marietta is a river town a little way up the Susquehanna from Columbia, and where Columbia is a mixed bag, Marietta proper is almost all old - tight streets of close-set homes and row houses, most of them well into their second century. Working here means working in old, close quarters, and that's a craft of its own.
 
-## Old homes with history
+### Old-home plumbing, done with care
 
-A lot of Marietta's housing stock is old, with tight mechanical spaces, older boilers and radiators, and layouts that were never built with modern ductwork in mind. We're comfortable in these homes. We find ways to bring in real comfort without fighting the house every step of the way.
+The plumbing in these homes has usually been added to and patched by a dozen hands over the decades - old drain stacks, a mix of pipe materials, and fixtures shoehorned into spaces never meant for them. We're used to it: figuring out what's actually behind the wall before we open it, and making a clean repair in a house where there's no room to spare.
 
-## Sizing a system to the home
+### Comfort in homes built before central air
 
-HVAC installation and replacement is our main work — furnaces, AC, heat pumps, boilers, and ductless. We're an authorized Amana and Rheem dealer. In an older home, we run a real load calculation so the new system fits the space it's actually heating, not an oversized guess. We handle plumbing repairs and upgrades right alongside.
-
-## A neighbor, not a call center
-
-Tom Falk has been family-owned since 1961, based nearby in Millersville — a local shop you can actually reach, not an out-of-town company. Installs carry a 1-year labor guarantee extendable up to 10 years, plus manufacturer warranties, with financing available through Synchrony. Give us a call at (717) 872-2850.
+Most of Marietta's homes went up long before anyone thought about air conditioning, and getting real comfort into them takes a plan that respects the house. Depending on the home that can mean careful ductwork, or a ductless system that cools without tearing into old plaster and trim. We look at the actual house and tell you honestly what fits.

@@ -1,24 +1,33 @@
 ---
-title: "Plumbing, Heating and Cooling in Quarryville PA - Tom Falk"
-description: "Plumbing and HVAC in Quarryville PA from Tom Falk. Family-owned since 1961, nearby in Millersville. Well pumps, water treatment, furnace and AC."
+title: "Plumbing and HVAC in Quarryville PA - Tom Falk"
+description: "Well pump, septic, and HVAC service in Quarryville and the Southern End PA. Family shop, Millersville since 1961."
 h1: "Plumbing, Heating, and Cooling in Quarryville, PA"
 townName: "Quarryville"
 primaryService: "hvac-installation-replacement"
+relatedServices:
+  - hvac-installation-replacement
+  - well-pumps
+  - septic-service
 order: 8
-heroImage: null
-heroImageAlt: null
+heroImage: "well-pump-puller.jpg"
+heroImageAlt: "The Tom Falk crew pulling a well pump for replacement in the Southern End."
+faq:
+  - q: "My well pump quit - how fast can you get out to Quarryville?"
+    a: "We know a dead well means no water, so we don't sit on Southern End calls. We'll pull and replace the pump and check the pressure tank and switch while we're there - those are often the real culprit - so you're not paying for a pump you didn't actually need."
+  - q: "Is it worth calling you all the way out to the Southern End for heating and cooling?"
+    a: "For the right work, yes. We're based up in Millersville, so for a full furnace, AC, or heat-pump install we're glad to come south - and we'll handle the well or septic while we're there if you need it."
 ---
 
-Quarryville anchors the southern end of Lancaster County — real farm country, where a lot of homes sit on well and septic and the nearest help isn't always close. That's the kind of place a dependable local trade matters most.
+Quarryville anchors the Southern End of the county, and it's stayed more rural than most - farmland, family operations, and a lot of ground that's been in the same hands for generations. Once you're past the borough, most homes aren't on public water and sewer at all; they're running their own well and their own septic. That's our kind of country.
 
-## Well, septic, and water treatment
+### Well and septic, both under one roof
 
-Out here, your water comes from a well, and hard or iron-heavy water is common. We handle well pumps, pressure tanks, and water treatment along with everyday plumbing. When the water side goes down on a rural property, everything stops, so we don't leave you waiting.
+A lot of shops do one or the other. We do both - and we can get to you quickly, without a long wait or a padded bill, which matters when your water's off or your septic's backing up and it isn't a problem that waits. We pull and replace well pumps, sort out pressure tanks and switches, and handle septic work from the everyday to the involved.
 
-## Heating and cooling done right
+### What a fair price looks like
 
-Our main work is HVAC installation and replacement — furnaces, AC, heat pumps, and boilers. We're an authorized dealer for Amana and Rheem, and before we quote anything we run a real load calculation to size the system for your home. On a farmhouse or a spread-out property, getting that sizing right matters even more.
+Out here you hear stories, so here's a real one: a homeowner near Quarryville, in New Providence, had been quoted around fourteen thousand dollars to replace a well pump. We did the job for under three thousand. Same work, honest price - and the reason we got the call was a neighbor's recommendation, which is how most of our Southern End work comes to us.
 
-## Nearby, family-owned since 1961
+### Heating and cooling, too
 
-When you call Tom Falk, you get a family shop up in Millersville, not an out-of-town company routing your call. We've done this since 1961. Installs come with a 1-year labor guarantee you can extend to 10 years, plus manufacturer warranties, and we offer financing through Synchrony. Reach us at (717) 872-2850.
+It's a long way from our shop, so when we come south we make it count - and that includes furnace, AC, and heat-pump work for homes out this way, not just the well and septic.

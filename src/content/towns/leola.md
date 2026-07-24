@@ -1,24 +1,29 @@
 ---
-title: "Plumbing, Heating and Cooling in Leola PA - Tom Falk"
-description: "Plumbing and HVAC in Leola PA from Tom Falk. Family-owned since 1961, based nearby in Millersville. Well pumps, water treatment, furnace and AC."
+title: "Plumbing and HVAC in Leola PA - Tom Falk"
+description: "Heating, cooling, and plumbing for Leola PA homes. Family shop in Millersville since 1961, with our own crew on every job."
 h1: "Plumbing, Heating, and Cooling in Leola, PA"
 townName: "Leola"
 primaryService: "hvac-installation-replacement"
+relatedServices:
+  - hvac-installation-replacement
+  - ac-installation-replacement
+  - plumbing-repairs-fixtures
 order: 9
-heroImage: null
-heroImageAlt: null
+heroImage: "1000000582.jpg"
+heroImageAlt: "A new furnace installed by Tom Falk."
+faq:
+  - q: "Do you replace furnaces and AC in Leola?"
+    a: "Regularly. A lot of Leola's homes are newer, so it's often clean furnace and air-conditioning replacement, fit to the house and done without drama. It's a good part of our work in town."
+  - q: "How far out from Leola do you cover?"
+    a: "We're strongest right in and around town. Further out into the farm country there are established local trades neighbors already rely on, so a lot of that work stays local - but for homes in and around Leola, we're glad to help."
 ---
 
-Leola sits in the farm country of eastern Lancaster County, out near the Plain communities, with a mix of in-town houses and rural properties. Both kinds of homes need dependable heat, water, and cooling, and both are what we do.
+Leola runs like a corridor - Route 340 threading through it with farmland opening up on both sides, and the homes clustered more in town than scattered across the fields. It's newer than a lot of its neighbors, more development-style than century-old, and that shapes the work we do there.
 
-## Town homes and rural properties
+### Newer homes, straightforward systems
 
-In town, we handle the plumbing and HVAC you'd expect. Out on the rural properties, many homes run on well and septic, so we also take care of well pumps, pressure tanks, and water treatment. Whichever side of the road you're on, one local shop can cover it.
+Because the housing around Leola leans newer, the calls lean less toward failing century-old pipe and more toward the heating, cooling, and plumbing that keep an established-but-not-ancient home comfortable - furnace and AC service and replacement, water heaters, and everyday repairs. It's clean, straightforward work, and it's the bulk of what we do in town.
 
-## A properly sized install
+### Close to home, honestly
 
-Heating and cooling installation is our main work. We put in furnaces, AC, heat pumps, and boilers, and we're an authorized Amana and Rheem dealer. Before any new system, we run a real load calculation and size it to your home. A right-sized system runs better and lasts longer than one that was simply guessed at.
-
-## The local family shop
-
-Tom Falk is family-owned, nearby in Millersville, and has been since 1961 — not a call center, not an out-of-town rollup. We stand behind installs with a 1-year labor guarantee that extends up to 10 years, plus manufacturer warranties, and financing through Synchrony. Call us at (717) 872-2850.
+We're most useful to you right in and around Leola itself. Out in the surrounding farm country there are long-established local contractors who are well known within the close-knit communities there - and that familiarity tends to carry over to their neighbors too, so a lot of that work stays local, in a way we respect. For the homes in and around town, we're a full plumbing and heating shop, and glad to help.

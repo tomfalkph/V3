@@ -1,22 +1,33 @@
 ---
-title: "Plumbing, Heating and Cooling in Columbia PA - Tom Falk"
-description: "Columbia plumber and HVAC installer for the river town's older housing stock. Family-owned since 1961, based nearby in Millersville PA. Free quotes."
+title: "Plumbing and HVAC in Columbia PA - Tom Falk"
+description: "Plumbing repair, water treatment, and HVAC in Columbia PA, older river-town homes a specialty. Family shop near Millersville since 1961."
 h1: "Plumbing, Heating, and Cooling in Columbia, PA"
 townName: "Columbia"
 primaryService: "hvac-installation-replacement"
+relatedServices:
+  - hvac-installation-replacement
+  - water-treatment
+  - repiping
 order: 5
-heroImage: null
-heroImageAlt: null
+heroImage: "cast-iron-drain.jpg"
+heroImageAlt: "Aging cast-iron drain piping in an older home, ready for replacement by Tom Falk."
+faq:
+  - q: "My last water softener didn't last as long as it should have - why?"
+    a: "Around Columbia, chlorine is a likely culprit. The water can run higher in chlorine than most, and chlorine slowly destroys a softener's resin bed. We install a carbon pre-filter ahead of the softener to remove it first, which is what lets the softener reach the lifespan you paid for."
+  - q: "Do you do heating and cooling in Columbia, or only plumbing?"
+    a: "Both. Plumbing and water treatment are the bulk of our Columbia work, but we service and replace furnaces and air conditioners here too, and keep regular maintenance customers in town."
 ---
 
-## An old river town
+Columbia is an old river town, and it wears its history in its pipes. The housing runs from tight downtown row homes - some well-kept, some pretty rough - out to median-age developments and a few newer pockets on the edges, so no two service calls out here look quite the same.
 
-Columbia is a historic town on the Susquehanna, just west of us, with a housing stock that carries real age. Older riverfront homes come with their own habits — tight mechanical spaces, systems added on over the years, rooms that never heated quite evenly. We've worked in houses like these for decades, and it shows in how we plan a replacement.
+### Old plumbing, honestly worn
 
-## Older heating, sized right
+A lot of what we do in Columbia is repair work on plumbing that's simply had a long life - corroded supply lines, failing shutoffs, and drains that have carried their last load. On the older homes we do a fair amount of repiping and remodel work, replacing systems that have rusted past the point of another patch.
 
-A lot of Columbia homes still run older heating: boilers and radiators, aging furnaces, ductwork that has been patched more than once. When we put in a new system, we run a real load calculation and size it for your actual home instead of a guess. In a house with history, getting the size right is most of the comfort.
+### Columbia water is its own problem
 
-## Your nearby family shop
+The water here is worth knowing about. Beyond the usual county hardness, Columbia's water can carry a higher chlorine level - and chlorine is rough on the resin inside a standard water softener, breaking it down early and cutting years off a unit you expected to last. So when we set a softener around Columbia, we put a carbon pre-filter ahead of it to strip the chlorine first and protect the resin. It's a small step a lot of installers skip, and it's the difference between a softener that lasts and one that doesn't.
 
-We're based just east in Millersville and have been family-owned since 1961, so calling us means a real local shop, not an out-of-town rollup or a call center. We're an authorized Amana and Rheem dealer, we back installs with a 1-year labor guarantee extendable up to 10 years, and financing runs through Synchrony. Call for a free quote.
+### Heating and cooling too
+
+We keep a handful of HVAC maintenance customers in Columbia and handle furnace and AC work alongside the plumbing - same crew, whichever you need.

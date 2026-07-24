@@ -71,6 +71,12 @@ a:not(.btn):not(.card):not(.brand):focus-visible { text-decoration: underline; }
 .section--ink { background: var(--bg-ink); color: #f2f1ee; }
 .section--ink h2, .section--ink h3 { color: #fff; }
 .prose { max-width: 68ch; }
+/* Body-copy blocks span the normal content width so they line up with the hero
+   and page edges, while each line stays at a readable measure, left-aligned —
+   fixes the narrow column that floated in the center on desktop. */
+.container.prose { max-width: var(--max); }
+.container.prose > * { max-width: 68ch; }
+.container.prose > .internal-links { max-width: 68ch; }
 .prose ul { padding-left: 1.15rem; }
 .prose li { margin-bottom: 0.35rem; }
 .prose h2 + p, .prose h3 + p { margin-top: 0.2rem; }
